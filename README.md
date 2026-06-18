@@ -68,7 +68,7 @@ flowchart TB
 ```text
 src/edos/
   verifier/            Clean and polluted validation-feedback implementation
-  controller/          Budget controller, risk estimators, and policy variants  主计长/预算主计长、风险估算员和政策变量
+  controller/          Budget controller, risk estimators, and policy variants 
   adapters/            Deterministic local, local-command, OpenCode, OpenHands integrations
   programbench/        Task loading, workspace handling, Docker/preflight, scoring
   instrumentation/     Event logging, usage accounting, and failure labels
