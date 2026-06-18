@@ -1,9 +1,15 @@
-# OBLIGE Artifact
+# OBLIGE Artifact  OBLIGE 手工艺品
 
 Coercing Long-Horizon Coding Agents into Budget-Controlled Over-Verification
+胁迫长地平线编码代理进行受预算控制的过度验证
+胁迫长地平线编码代理进行受预算控制的过度验证
 via Adversarial Validation Feedback
+通过对抗验证反馈
+通过对抗验证反馈
 
 ## Overview
+## 概览
+## 概览
 
 OBLIGE is an experimental framework for studying validation-feedback
 over-compliance in long-horizon coding agents on long-horizon software
@@ -69,7 +75,7 @@ flowchart TB
 ```text
 src/edos/
   verifier/            Clean and polluted validation-feedback implementation
-  controller/          Budget controller, risk estimators, and policy variants
+  controller/          Budget controller, risk estimators, and policy variants  主计长/预算主计长、风险估算员和政策变量
   adapters/            Deterministic local, local-command, OpenCode, OpenHands integrations
   programbench/        Task loading, workspace handling, Docker/preflight, scoring
   instrumentation/     Event logging, usage accounting, and failure labels
@@ -102,11 +108,12 @@ tests/                 Unit and integration tests for the public artifact
 
 ```bash
 git clone https://github.com/yx-yuu/OBLIGE.git
-cd OBLIGE
+cd OBLIGE  cd 义务
 python -m pip install -e .
 ```
 
 Verify the package import:
+验证软件包导入：
 
 ```bash
 PYTHONPATH=src python -c "from edos.verifier.api import BehaviorVerifier; print('OK')"
@@ -119,6 +126,7 @@ local adapter. It is useful for checking the installation and the experiment
 pipeline before running real-agent configurations.
 
 Single-task execution:
+单任务执行：
 
 ```bash
 scripts/quickstart.sh 1 runs/quick_single artifacts/quick_single_eval
@@ -230,12 +238,12 @@ PYTHONPATH=src python -m edos.cli.build_defense_evidence \
 | Configuration | Purpose |
 |---|---|
 | `configs/experiments/smoke.json` | Deterministic local smoke matrix |
-| `configs/experiments/quick_local.json` | 20-task local quick matrix |
+| `configs/experiments/quick_local.json` | local quick matrix |
 | `configs/experiments/opencode_real_programbench_mechanism_cleanroom_pilot.json` | OpenCode cleanroom ProgramBench pilot |
-| `configs/experiments/opencode_real_programbench_mechanism_cleanroom_pilot30.json` | 30-task OpenCode ProgramBench pilot |
+| `configs/experiments/opencode_real_programbench_mechanism_cleanroom_pilot30.json` | OpenCode ProgramBench pilot |
 | `configs/experiments/opencode_real_mechanism_ablation_pilot.json` | Mechanism ablation pilot |
 | `configs/experiments/opencode_real_online_defense_pilot.json` | Online defense pilot |
-| `configs/experiments/openhands_real_smoke.json` | OpenHands smoke run |
+| `configs/experiments/openhands_real_smoke.json` | OpenHands run |
 | `configs/experiments/openhands_real_online_defense_pilot.json` | OpenHands online defense run |
 
 ## Testing
@@ -263,10 +271,3 @@ PYTHONPATH=src python -m unittest tests.test_quickstart
 - API credentials are read from environment variables such as
   `OPENAI_API_KEY`, `LLM_API_KEY`, or profile-specific variables configured in
   `configs/models/openai_compatible.json`.
-
-## Run Records
-
-The repository is organized for controlled research experiments in local
-benchmark workspaces. It preserves run metadata, usage summaries, verifier
-state transitions, controller traces, and scoring records so that each
-clean-vs-polluted comparison can be traced through structured artifacts.
