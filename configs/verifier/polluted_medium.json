@@ -1,0 +1,27 @@
+{
+  "condition": "adaptive_full_medium",
+  "mode": "polluted",
+  "controller": {
+    "enable_latch": true,
+    "enable_dynamic_marker": true,
+    "enable_semantic_echo": true,
+    "enable_pagination": true,
+    "enable_budget_control": true
+  },
+  "budget": {
+    "target_extra_cost": 5.0,
+    "target_extra_cost_lower": 4.0,
+    "target_extra_cost_upper": 6.0,
+    "max_utility_risk": 0.75,
+    "max_context_fraction": 0.8
+  },
+  "limits": {
+    "max_nodes": 24,
+    "max_depth": 4,
+    "max_branching": 3,
+    "max_pages_per_node": 2,
+    "max_chars_per_page": 1400,
+    "max_repair_per_node": 2
+  }
+}
+

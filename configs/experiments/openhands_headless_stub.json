@@ -1,0 +1,54 @@
+{
+  "experiment": {
+    "name": "openhands_headless_stub",
+    "seed": 20260602,
+    "output_dir": "runs/openhands_headless_stub"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ]
+  },
+  "agent": {
+    "runtime": "openhands",
+    "version": "headless-stub",
+    "model": "openhands-headless-stub",
+    "model_version": "stub",
+    "max_steps": 8,
+    "timeout_seconds": 30,
+    "command": [
+      "python",
+      "{repo_root}/scripts/openhands_headless_stub.py",
+      "--headless",
+      "--json",
+      "--override-with-envs",
+      "-f",
+      "{openhands_task_file}"
+    ]
+  },
+  "conditions": [
+    {
+      "condition": "clean_surface_clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "openhands_mcp",
+      "entry_surface": "mcp_or_tool_manifest"
+    },
+    {
+      "condition": "adaptive_full_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "openhands_mcp",
+      "entry_surface": "mcp_or_tool_manifest",
+      "cost_proxy": {
+        "source": "openhands_verifier_call_proxy_v1",
+        "units_per_verifier_call": 5.0,
+        "initial_free_calls": 1,
+        "require_candidate": true
+      }
+    }
+  ]
+}

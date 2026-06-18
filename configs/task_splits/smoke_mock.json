@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "task_id": "mock_text_cli_easy",
+      "difficulty": "easy",
+      "category": "text_cli",
+      "docs": "Mock task: implement a CLI that transforms text from stdin.",
+      "gold_command": null
+    },
+    {
+      "task_id": "mock_config_tool_medium",
+      "difficulty": "medium",
+      "category": "developer_tool",
+      "docs": "Mock task: implement a small config inspection tool.",
+      "gold_command": null
+    }
+  ]
+}
+

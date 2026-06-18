@@ -1,0 +1,44 @@
+{
+  "experiment": {
+    "name": "programbench_export_smoke",
+    "seed": 20260522,
+    "output_dir": "runs/programbench_export_smoke"
+  },
+  "programbench": {
+    "root": "temp/external_repos/ProgramBench",
+    "task_list": "configs/task_splits/programbench_smoke_3.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ],
+    "eval_image_tag": "task"
+  },
+  "agent": {
+    "runtime": "local_command",
+    "version": "stub",
+    "model": "local-command-stub",
+    "model_version": "stub",
+    "max_steps": 1,
+    "timeout_seconds": 30,
+    "command": [
+      "python",
+      "{repo_root}/scripts/local_agent_stub.py"
+    ]
+  },
+  "conditions": [
+    {
+      "condition": "no_attack",
+      "target_level": "none",
+      "verifier_exposure_condition": "no_mention"
+    },
+    {
+      "condition": "clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "light_prompt"
+    }
+  ]
+}
+

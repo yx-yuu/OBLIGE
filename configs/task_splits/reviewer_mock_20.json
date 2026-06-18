@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "name": "reviewer_mock_20",
+    "purpose": "Deterministic reviewer fixture for single-task and 10-20 task artifact checks.",
+    "claim_boundary": "Mock tasks exercise the full method, logging, aggregation, and Evaluation artifact pipeline; they are not paper-main ProgramBench evidence."
+  },
+  "tasks": [
+    {
+      "task_id": "reviewer_text_cli_001",
+      "difficulty": "easy",
+      "category": "text-processing CLI",
+      "docs": "Mock task: implement a stdin text normalizer with whitespace-sensitive stdout.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_text_cli_002",
+      "difficulty": "easy",
+      "category": "text-processing CLI",
+      "docs": "Mock task: implement a line filter with argument parsing and stderr on invalid flags.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_file_tool_003",
+      "difficulty": "easy",
+      "category": "file/disk + compression",
+      "docs": "Mock task: implement a file copier with overwrite and missing-file behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_file_tool_004",
+      "difficulty": "medium",
+      "category": "file/disk + compression",
+      "docs": "Mock task: implement a small archive lister with stdout formatting and exit codes.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_dev_tool_005",
+      "difficulty": "medium",
+      "category": "developer tools",
+      "docs": "Mock task: implement a config inspection CLI with precedence rules.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_dev_tool_006",
+      "difficulty": "medium",
+      "category": "developer tools",
+      "docs": "Mock task: implement a JSON field selector with malformed-input errors.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_system_007",
+      "difficulty": "medium",
+      "category": "system/network + security",
+      "docs": "Mock task: implement a local status command with flags and stable exit codes.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_system_008",
+      "difficulty": "hard",
+      "category": "system/network + security",
+      "docs": "Mock task: implement a permission-check reporter with stderr and code-path edge cases.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_media_009",
+      "difficulty": "medium",
+      "category": "media/graphics + data",
+      "docs": "Mock task: implement a tabular data summarizer with file input and stdout tables.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_media_010",
+      "difficulty": "hard",
+      "category": "media/graphics + data",
+      "docs": "Mock task: implement a metadata printer with missing-field behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_productivity_011",
+      "difficulty": "easy",
+      "category": "productivity/demos",
+      "docs": "Mock task: implement a todo-list demo CLI with stable formatting.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_productivity_012",
+      "difficulty": "medium",
+      "category": "productivity/demos",
+      "docs": "Mock task: implement a note formatter with argument and stdin modes.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_language_013",
+      "difficulty": "hard",
+      "category": "Lang./interpreters",
+      "docs": "Mock task: implement a tiny expression evaluator with syntax-error stderr.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_language_014",
+      "difficulty": "hard",
+      "category": "Lang./interpreters",
+      "docs": "Mock task: implement a mini template renderer with file and stdin behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_text_cli_015",
+      "difficulty": "medium",
+      "category": "text-processing CLI",
+      "docs": "Mock task: implement a sorter with duplicate and empty-input behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_file_tool_016",
+      "difficulty": "hard",
+      "category": "file/disk + compression",
+      "docs": "Mock task: implement a directory summarizer with file side effects.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_dev_tool_017",
+      "difficulty": "easy",
+      "category": "developer tools",
+      "docs": "Mock task: implement a version parser with help text and invalid-input behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_system_018",
+      "difficulty": "medium",
+      "category": "system/network + security",
+      "docs": "Mock task: implement a checksum verifier with file and stderr behavior.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_media_019",
+      "difficulty": "easy",
+      "category": "media/graphics + data",
+      "docs": "Mock task: implement a CSV previewer with width and row-limit flags.",
+      "gold_command": null
+    },
+    {
+      "task_id": "reviewer_productivity_020",
+      "difficulty": "hard",
+      "category": "productivity/demos",
+      "docs": "Mock task: implement a calendar formatter with invalid date errors.",
+      "gold_command": null
+    }
+  ]
+}

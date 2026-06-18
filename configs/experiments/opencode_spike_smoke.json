@@ -1,0 +1,52 @@
+{
+  "experiment": {
+    "name": "opencode_spike_smoke",
+    "seed": 20260523,
+    "output_dir": "runs/opencode_spike_smoke"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ]
+  },
+  "agent": {
+    "runtime": "opencode",
+    "version": "stub",
+    "model": "opencode-spike-stub",
+    "model_version": "stub",
+    "max_steps": 8,
+    "timeout_seconds": 30,
+    "command": [
+      "python",
+      "{repo_root}/scripts/opencode_agent_stub.py"
+    ]
+  },
+  "conditions": [
+    {
+      "condition": "clean_skill_clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "opencode_skill"
+    },
+    {
+      "condition": "adaptive_full_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "opencode_skill",
+      "cost_proxy": {
+        "source": "opencode_verifier_call_proxy_v6_rolling_feedback_length",
+        "units_per_verifier_call": 3.5,
+        "initial_free_calls": 2,
+        "require_candidate": true,
+        "response_chars_per_unit": 1000.0,
+        "projected_response_chars": 1000,
+        "response_projection_mode": "rolling_mean",
+        "response_projection_floor": 320,
+        "response_projection_window": 3
+      }
+    }
+  ]
+}

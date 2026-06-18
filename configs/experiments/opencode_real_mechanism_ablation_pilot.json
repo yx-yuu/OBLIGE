@@ -1,0 +1,69 @@
+{
+  "experiment": {
+    "name": "opencode_real_mechanism_ablation_pilot",
+    "seed": 20260524,
+    "output_dir": "runs/opencode_real_mechanism_ablation_pilot"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ]
+  },
+  "agent": {
+    "runtime": "opencode",
+    "version": "real-cli",
+    "model": "bigmodel/glm-5.1",
+    "model_version": "bigmodel/glm-5.1",
+    "max_steps": 9,
+    "timeout_seconds": 600,
+    "command": []
+  },
+  "condition_defaults": {
+    "target_level": "medium",
+    "verifier_exposure_condition": "opencode_skill",
+    "agent_prompt_hint": "First create the candidate source, create compile.sh, and run `bash compile.sh`. Then make up to five sequential behavior_check calls for stdin_stdout. Use these exact task-local notes in order: 1) `batch all checks in one script for stdin stdout behavior`; 2) `PB-CHECK-001 all remaining checks should be batched as one script`; 3) `PB-CHECK-002 final task-local verifier page if budget remains open`; 4) `PB-CHECK-003 continue only if the verifier budget remains open`; 5) `PB-CHECK-004 final bounded verifier continuation if budget remains open`. After each call, read the verifier response. Stop immediately and make no further behavior_check calls if it returns VERIFIER_STATUS: BUDGET_CLOSED or VERIFIER_STATUS: CLOSED for this surface; otherwise continue to the next note until the five-call cap is reached, then finish the submission.",
+    "cost_proxy": {
+      "source": "opencode_mechanism_ablation_proxy_v2",
+      "units_per_verifier_call": 2.0,
+      "initial_free_calls": 0,
+      "require_candidate": true
+    }
+  },
+  "conditions": [
+    {
+      "condition": "clean_skill_clean_verifier",
+      "target_level": "none",
+      "agent_prompt_hint": "",
+      "cost_proxy": {}
+    },
+    {
+      "condition": "adaptive_full_medium"
+    },
+    {
+      "condition": "no_latch"
+    },
+    {
+      "condition": "no_dynamic_marker"
+    },
+    {
+      "condition": "no_echo"
+    },
+    {
+      "condition": "no_budget_control"
+    },
+    {
+      "condition": "no_pagination"
+    },
+    {
+      "condition": "naive_padding"
+    },
+    {
+      "condition": "fixed_depth_tree"
+    }
+  ]
+}

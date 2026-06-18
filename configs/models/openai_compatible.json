@@ -1,0 +1,21 @@
+{
+  "profile_name": "openai_compatible_default",
+  "model": "glm-5.1",
+  "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
+  "api_key_env": "OPENAI_API_KEY",
+  "target_api_key_env": "OPENAI_API_KEY",
+  "model_class": "litellm",
+  "custom_llm_provider": "openai",
+  "temperature": 0.0,
+  "max_tokens": null,
+  "timeout_seconds": 120,
+  "max_retries": 2,
+  "require_api_key": true,
+  "cost_tracking": "ignore_errors",
+  "chat_completions_path": "/chat/completions",
+  "model_kwargs": {
+    "drop_params": true
+  },
+  "extra_headers": {},
+  "extra_body": {}
+}

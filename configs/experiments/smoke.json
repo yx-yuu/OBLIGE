@@ -1,0 +1,161 @@
+{
+  "experiment": {
+    "name": "smoke_mvp",
+    "seed": 20260522,
+    "output_dir": "runs/smoke_mvp"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock.json",
+    "no_internet": true
+  },
+  "agent": {
+    "runtime": "mock",
+    "version": "mvp",
+    "model": "mock-model",
+    "model_version": "mvp",
+    "max_steps": 12,
+    "timeout_seconds": 60
+  },
+  "conditions": [
+    {
+      "condition": "no_attack",
+      "target_level": "none",
+      "verifier_exposure_condition": "no_mention"
+    },
+    {
+      "condition": "clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "adaptive_full_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "adaptive_full_low",
+      "target_level": "low",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "adaptive_full_high",
+      "target_level": "high",
+      "verifier_exposure_condition": "fixed_feedback"
+    },
+    {
+      "condition": "static_ipi",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "todo_injection",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "tool_metadata_poison",
+      "target_level": "medium",
+      "verifier_exposure_condition": "tool_manifest"
+    },
+    {
+      "condition": "audit_padding",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "static_workflow_guidance",
+      "target_level": "medium",
+      "verifier_exposure_condition": "workflow_guided"
+    },
+    {
+      "condition": "draincode",
+      "target_level": "medium",
+      "verifier_exposure_condition": "workflow_guided"
+    },
+    {
+      "condition": "agentdos",
+      "target_level": "medium",
+      "verifier_exposure_condition": "workflow_guided"
+    },
+    {
+      "condition": "conservative_adaptation",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "naive_padding",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "fixed_shallow",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "fixed_depth_tree",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "fixed_deep",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_budget_control",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_latch",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_dynamic_marker",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_echo",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_pagination",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_repair",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_graph",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_shrink",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "no_utility_guard",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "static_behavior_surface",
+      "target_level": "medium",
+      "verifier_exposure_condition": "light_prompt"
+    },
+    {
+      "condition": "clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "tool_available"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "tasks": [
+    {
+      "task_id": "cmatsuoka__figlet.202a0a8",
+      "difficulty": "easy",
+      "category": "c",
+      "docs": "ProgramBench instance cmatsuoka__figlet.202a0a8 from cmatsuoka/figlet",
+      "metadata": {
+        "repository": "cmatsuoka/figlet",
+        "commit": "202a0a8110650a943f1125f536b3bb455cf72ee1",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/cmatsuoka__figlet.202a0a8/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/cmatsuoka__figlet.202a0a8/tests.json",
+        "image_name": "programbench/cmatsuoka_1776_figlet.202a0a8",
+        "eval_clean_hashes": [
+          "dd451146b1c0fcc67edf6569cfdc7ab237cc225fec41e6114eb0d759c701204d"
+        ]
+      }
+    },
+    {
+      "task_id": "xorg62__tty-clock.f2f847c",
+      "difficulty": "easy",
+      "category": "c",
+      "docs": "ProgramBench instance xorg62__tty-clock.f2f847c from xorg62/tty-clock",
+      "metadata": {
+        "repository": "xorg62/tty-clock",
+        "commit": "f2f847cf2cc2949c8a8b7779a778f366d3743474",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/xorg62__tty-clock.f2f847c/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/xorg62__tty-clock.f2f847c/tests.json",
+        "image_name": "programbench/xorg62_1776_tty-clock.f2f847c",
+        "eval_clean_hashes": [
+          "cd400708bcd6a5b9dd28bd450a211ec4625cde31470057e9d62f66072e297db0"
+        ]
+      }
+    },
+    {
+      "task_id": "arthursonzogni__json-tui.17a22b6",
+      "difficulty": "easy",
+      "category": "cpp",
+      "docs": "ProgramBench instance arthursonzogni__json-tui.17a22b6 from ArthurSonzogni/json-tui",
+      "metadata": {
+        "repository": "ArthurSonzogni/json-tui",
+        "commit": "17a22b6720878df9ab16834fb254308da4ae04af",
+        "language": "cpp",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/arthursonzogni__json-tui.17a22b6/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/arthursonzogni__json-tui.17a22b6/tests.json",
+        "image_name": "programbench/arthursonzogni_1776_json-tui.17a22b6",
+        "eval_clean_hashes": [
+          "4349db9afad22577dac9848f201b520838a1ffd602ed68f02d24a2551e58aaff"
+        ]
+      }
+    },
+    {
+      "task_id": "rs__jplot.2a54bcc",
+      "difficulty": "easy",
+      "category": "go",
+      "docs": "ProgramBench instance rs__jplot.2a54bcc from rs/jplot",
+      "metadata": {
+        "repository": "rs/jplot",
+        "commit": "2a54bccf26d9cb644ec987994123cf20683fa75b",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/rs__jplot.2a54bcc/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/rs__jplot.2a54bcc/tests.json",
+        "image_name": "programbench/rs_1776_jplot.2a54bcc",
+        "eval_clean_hashes": [
+          "ca593bbd96c07526d5d59ea58d4953f302b3f6b061f4042c5c05458dbaed33ba"
+        ]
+      }
+    },
+    {
+      "task_id": "sclevine__yj.8016400",
+      "difficulty": "easy",
+      "category": "go",
+      "docs": "ProgramBench instance sclevine__yj.8016400 from sclevine/yj",
+      "metadata": {
+        "repository": "sclevine/yj",
+        "commit": "80164002c0d7f88aa58fa5bec8a8cf4f1bb4e93b",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/sclevine__yj.8016400/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/sclevine__yj.8016400/tests.json",
+        "image_name": "programbench/sclevine_1776_yj.8016400",
+        "eval_clean_hashes": [
+          "58174833025a6ceb4c124ceb281fc23da0da45b62356b4f87e7136ee3a14451c"
+        ]
+      }
+    },
+    {
+      "task_id": "rbakbashev__elfcat.52f8cc7",
+      "difficulty": "easy",
+      "category": "rs",
+      "docs": "ProgramBench instance rbakbashev__elfcat.52f8cc7 from rbakbashev/elfcat",
+      "metadata": {
+        "repository": "rbakbashev/elfcat",
+        "commit": "52f8cc7045887840271cbdd848da69efe7482ea6",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/rbakbashev__elfcat.52f8cc7/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/rbakbashev__elfcat.52f8cc7/tests.json",
+        "image_name": "programbench/rbakbashev_1776_elfcat.52f8cc7",
+        "eval_clean_hashes": []
+      }
+    },
+    {
+      "task_id": "doxygen__doxygen.966d98e",
+      "difficulty": "hard",
+      "category": "c",
+      "docs": "ProgramBench instance doxygen__doxygen.966d98e from doxygen/doxygen",
+      "metadata": {
+        "repository": "doxygen/doxygen",
+        "commit": "966d98e54491461ecd27b7427caa360006d8fa59",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/doxygen__doxygen.966d98e/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/doxygen__doxygen.966d98e/tests.json",
+        "image_name": "programbench/doxygen_1776_doxygen.966d98e",
+        "eval_clean_hashes": [
+          "925c9583aa3897a5034869549b3665115746101e785a29a651bad965c01fda3b"
+        ]
+      }
+    },
+    {
+      "task_id": "ffmpeg__ffmpeg.360a402",
+      "difficulty": "hard",
+      "category": "c",
+      "docs": "ProgramBench instance ffmpeg__ffmpeg.360a402 from FFmpeg/FFmpeg",
+      "metadata": {
+        "repository": "FFmpeg/FFmpeg",
+        "commit": "360a4025fb2582d52d871ea2129d6b659598bb49",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/ffmpeg__ffmpeg.360a402/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/ffmpeg__ffmpeg.360a402/tests.json",
+        "image_name": "programbench/ffmpeg_1776_ffmpeg.360a402",
+        "eval_clean_hashes": []
+      }
+    },
+    {
+      "task_id": "johnkerl__miller.8d85b46",
+      "difficulty": "hard",
+      "category": "go",
+      "docs": "ProgramBench instance johnkerl__miller.8d85b46 from johnkerl/miller",
+      "metadata": {
+        "repository": "johnkerl/miller",
+        "commit": "8d85b46404a8a6a62c2715d404dfa94bb883775d",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/johnkerl__miller.8d85b46/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/johnkerl__miller.8d85b46/tests.json",
+        "image_name": "programbench/johnkerl_1776_miller.8d85b46",
+        "eval_clean_hashes": [
+          "86fc8c3ec6285115aba5fee4dcd5763bac921a58a0eef418775e9805361e629c"
+        ]
+      }
+    },
+    {
+      "task_id": "skeema__skeema.6a76243",
+      "difficulty": "hard",
+      "category": "go",
+      "docs": "ProgramBench instance skeema__skeema.6a76243 from skeema/skeema",
+      "metadata": {
+        "repository": "skeema/skeema",
+        "commit": "6a76243273486259e7add52bc9f6dce236a2f98a",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/skeema__skeema.6a76243/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/skeema__skeema.6a76243/tests.json",
+        "image_name": "programbench/skeema_1776_skeema.6a76243",
+        "eval_clean_hashes": [
+          "074226d3e39a852ad1eddc97817495cf01f21309e8ba710f22de8af8f8b9ab3f"
+        ]
+      }
+    },
+    {
+      "task_id": "lfos__calcurse.49180d5",
+      "difficulty": "medium",
+      "category": "c",
+      "docs": "ProgramBench instance lfos__calcurse.49180d5 from lfos/calcurse",
+      "metadata": {
+        "repository": "lfos/calcurse",
+        "commit": "49180d5537edb53ccd0d784a782e32816750323a",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/lfos__calcurse.49180d5/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/lfos__calcurse.49180d5/tests.json",
+        "image_name": "programbench/lfos_1776_calcurse.49180d5",
+        "eval_clean_hashes": [
+          "bffc523c9f38258c077a8959f179269710378cd45cea55c77c8a46a889db6912"
+        ]
+      }
+    },
+    {
+      "task_id": "guumaster__hostctl.d6d9699",
+      "difficulty": "medium",
+      "category": "go",
+      "docs": "ProgramBench instance guumaster__hostctl.d6d9699 from guumaster/hostctl",
+      "metadata": {
+        "repository": "guumaster/hostctl",
+        "commit": "d6d96999f81952fa8d2ea3121ae5e3cce08afed6",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/guumaster__hostctl.d6d9699/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/guumaster__hostctl.d6d9699/tests.json",
+        "image_name": "programbench/guumaster_1776_hostctl.d6d9699",
+        "eval_clean_hashes": [
+          "2d3c78fb64b6291fab22a5bc5f31d4d4142fa12dc7ed843b2ae8decbb1413d70"
+        ]
+      }
+    },
+    {
+      "task_id": "kyoh86__richgo.313114f",
+      "difficulty": "medium",
+      "category": "go",
+      "docs": "ProgramBench instance kyoh86__richgo.313114f from kyoh86/richgo",
+      "metadata": {
+        "repository": "kyoh86/richgo",
+        "commit": "313114fd66b78483c1a94d63d27df70df70b5b2a",
+        "language": "go",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/kyoh86__richgo.313114f/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/kyoh86__richgo.313114f/tests.json",
+        "image_name": "programbench/kyoh86_1776_richgo.313114f",
+        "eval_clean_hashes": [
+          "74da9ab38dfac9f39cd9300aceee1d0dffcaffc6347dcb0aa6b797ca6d958279"
+        ]
+      }
+    },
+    {
+      "task_id": "altdesktop__i3-style.f93821b",
+      "difficulty": "medium",
+      "category": "rs",
+      "docs": "ProgramBench instance altdesktop__i3-style.f93821b from altdesktop/i3-style",
+      "metadata": {
+        "repository": "altdesktop/i3-style",
+        "commit": "f93821b239667cb4ecff41e6ad9632da0b5aaa50",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/altdesktop__i3-style.f93821b/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/altdesktop__i3-style.f93821b/tests.json",
+        "image_name": "programbench/altdesktop_1776_i3-style.f93821b",
+        "eval_clean_hashes": [
+          "05a7ef5341ac0a1d437f0b4d547badf376f951cc51578f01a91a279519a8215b"
+        ]
+      }
+    },
+    {
+      "task_id": "burntsushi__ripgrep.3b7fd44",
+      "difficulty": "medium",
+      "category": "rs",
+      "docs": "ProgramBench instance burntsushi__ripgrep.3b7fd44 from BurntSushi/ripgrep",
+      "metadata": {
+        "repository": "BurntSushi/ripgrep",
+        "commit": "3b7fd442a6f3aa73f650e763d7cbb902c03d700e",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/burntsushi__ripgrep.3b7fd44/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/burntsushi__ripgrep.3b7fd44/tests.json",
+        "image_name": "programbench/burntsushi_1776_ripgrep.3b7fd44",
+        "eval_clean_hashes": [
+          "18b4d1ed66746d5cb6a7efaf634e53434844eb4acbba20492445d55c6b344559"
+        ]
+      }
+    },
+    {
+      "task_id": "nikolassv__bartib.6b9b5ce",
+      "difficulty": "medium",
+      "category": "rs",
+      "docs": "ProgramBench instance nikolassv__bartib.6b9b5ce from nikolassv/bartib",
+      "metadata": {
+        "repository": "nikolassv/bartib",
+        "commit": "6b9b5ce90d927992164e2faef55bce717b7c3427",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/nikolassv__bartib.6b9b5ce/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/nikolassv__bartib.6b9b5ce/tests.json",
+        "image_name": "programbench/nikolassv_1776_bartib.6b9b5ce",
+        "eval_clean_hashes": [
+          "a8658eff2fef4c4b3c502f0b48922a2acb198a4559d26f953f22b461877fc0d7"
+        ]
+      }
+    },
+    {
+      "task_id": "simeg__eureka.df3796c",
+      "difficulty": "medium",
+      "category": "rs",
+      "docs": "ProgramBench instance simeg__eureka.df3796c from simeg/eureka",
+      "metadata": {
+        "repository": "simeg/eureka",
+        "commit": "df3796c4b65302f93b338d46ed576e61d75b0b45",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/simeg__eureka.df3796c/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/simeg__eureka.df3796c/tests.json",
+        "image_name": "programbench/simeg_1776_eureka.df3796c",
+        "eval_clean_hashes": [
+          "1528514451c30447e93bc97bcda65118325cf80ceb92687716135f3ce12937aa"
+        ]
+      }
+    },
+    {
+      "task_id": "wgunderwood__tex-fmt.3f1aef6",
+      "difficulty": "medium",
+      "category": "rs",
+      "docs": "ProgramBench instance wgunderwood__tex-fmt.3f1aef6 from WGUNDERWOOD/tex-fmt",
+      "metadata": {
+        "repository": "WGUNDERWOOD/tex-fmt",
+        "commit": "3f1aef6220ba2672352fcf9b687816c46ca22739",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/wgunderwood__tex-fmt.3f1aef6/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/wgunderwood__tex-fmt.3f1aef6/tests.json",
+        "image_name": "programbench/wgunderwood_1776_tex-fmt.3f1aef6",
+        "eval_clean_hashes": [
+          "7ada12e17ade344f5691b22d112623750cfcffc1185594e974ff11623978a138"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "source": "build_programbench_split",
+    "programbench_root": "temp/external_repos/ProgramBench",
+    "limit": 30,
+    "difficulty": [
+      "easy",
+      "hard",
+      "medium"
+    ],
+    "category": [],
+    "exclude_repository_prefix": [
+      "testorg/"
+    ],
+    "seed": 20260524,
+    "per_difficulty_limit": 10,
+    "per_category_limit": 6,
+    "selection_mode": "stratified"
+  }
+}

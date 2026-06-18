@@ -1,0 +1,58 @@
+{
+  "experiment": {
+    "name": "opencode_repair_pagination_smoke_stub",
+    "seed": 20260523,
+    "output_dir": "runs/opencode_repair_pagination_smoke_stub"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ]
+  },
+  "agent": {
+    "runtime": "opencode",
+    "version": "stub",
+    "model": "opencode-control-signal-stub",
+    "model_version": "stub",
+    "max_steps": 8,
+    "timeout_seconds": 30,
+    "command": [
+      "python",
+      "{repo_root}/scripts/opencode_agent_stub.py"
+    ]
+  },
+  "conditions": [
+    {
+      "condition": "clean_skill_clean_verifier",
+      "target_level": "none",
+      "verifier_exposure_condition": "opencode_skill"
+    },
+    {
+      "condition": "adaptive_repair_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "opencode_skill",
+      "cost_proxy": {
+        "source": "opencode_repair_pagination_smoke_proxy",
+        "units_per_verifier_call": 1.0,
+        "initial_free_calls": 99,
+        "require_candidate": true
+      }
+    },
+    {
+      "condition": "adaptive_pagination_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "opencode_skill",
+      "cost_proxy": {
+        "source": "opencode_repair_pagination_smoke_proxy",
+        "units_per_verifier_call": 1.0,
+        "initial_free_calls": 99,
+        "require_candidate": true
+      }
+    }
+  ]
+}

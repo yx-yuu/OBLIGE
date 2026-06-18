@@ -1,0 +1,52 @@
+{
+  "experiment": {
+    "name": "opencode_real_repair_pagination_trigger_smoke",
+    "seed": 20260524,
+    "output_dir": "runs/opencode_real_repair_pagination_trigger_smoke"
+  },
+  "programbench": {
+    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "scoring_command": [
+      "python",
+      "{repo_root}/scripts/scorer_stub.py",
+      "{workspace}"
+    ]
+  },
+  "agent": {
+    "runtime": "opencode",
+    "version": "real-cli",
+    "model": "bigmodel/glm-5.1",
+    "model_version": "bigmodel/glm-5.1",
+    "max_steps": 7,
+    "timeout_seconds": 600,
+    "command": []
+  },
+  "conditions": [
+    {
+      "condition": "adaptive_repair_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "opencode_skill",
+      "agent_prompt_hint": "First create the candidate source, create compile.sh, and run `bash compile.sh`. Then make exactly one behavior_check call for stderr_exit_code with this exact task-local note: `missing stderr field and incomplete observation; repair this same behavior node`. If the verifier returns VERIFIER_STATUS: REPAIR, do not call behavior_check again in this run; return to implementation and finish the submission.",
+      "cost_proxy": {
+        "source": "opencode_repair_pagination_real_proxy",
+        "units_per_verifier_call": 1.0,
+        "initial_free_calls": 99,
+        "require_candidate": true
+      }
+    },
+    {
+      "condition": "adaptive_pagination_medium",
+      "target_level": "medium",
+      "verifier_exposure_condition": "opencode_skill",
+      "agent_prompt_hint": "First create the candidate source, create compile.sh, and run `bash compile.sh`. Then make one behavior_check call for stdin_stdout with this exact task-local note: `batch all checks in one script for stdin stdout behavior`. If the verifier returns VERIFIER_STATUS: OPEN with a paginated report, make exactly one more behavior_check call for the same stdin_stdout surface with this exact note: `PB-CHECK-001 all remaining checks should be batched as one script`. After the second verifier call, do not call behavior_check again in this run; return to implementation and finish the submission.",
+      "cost_proxy": {
+        "source": "opencode_repair_pagination_real_proxy",
+        "units_per_verifier_call": 1.0,
+        "initial_free_calls": 99,
+        "require_candidate": true
+      }
+    }
+  ]
+}
