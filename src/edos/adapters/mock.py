@@ -41,7 +41,7 @@ class MockAgentAdapter(AgentAdapter):
     """Deterministic adapter for schema and smoke testing.
 
     It simulates a coding agent that writes a candidate, optionally calls the
-    verifier, builds, probes, and submits. This is not a ProgramBench result.
+    verifier, builds, probes, and submits for deterministic quick checks.
     """
 
     def run_task(
@@ -238,7 +238,7 @@ class MockAgentAdapter(AgentAdapter):
         logger.write_json(
             "trajectory.raw.txt",
             {
-                "note": "mock trajectory for schema smoke testing only",
+                "note": "deterministic trajectory for quick reproducibility checks",
                 "actions": actions,
             },
         )

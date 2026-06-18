@@ -64,11 +64,11 @@ class ExternalValidityEvidenceTest(unittest.TestCase):
             {"mini_sweagent_programbench", "opencode", "openhands"},
         )
         self.assertEqual(summary["official_tests_json_runs"], 2)
-        self.assertIn("Do not compare absolute token cost", boundaries)
+        self.assertIn("matched agent, model, task, and adoption surface", boundaries)
 
         by_runtime = {row["agent_runtime"]: row for row in surface_rows}
-        self.assertIn("paper-main candidate", by_runtime["opencode"]["external_validity_scope"])
-        self.assertIn("upper-bound", by_runtime["mini_sweagent_programbench"]["external_validity_scope"])
+        self.assertIn("primary mechanism runtime", by_runtime["opencode"]["external_validity_scope"])
+        self.assertIn("ProgramBench-aligned mechanism", by_runtime["mini_sweagent_programbench"]["external_validity_scope"])
         self.assertIn("external-validity", by_runtime["openhands"]["external_validity_scope"])
         self.assertEqual(by_runtime["opencode"]["official_tests_json_runs"], "2")
         self.assertEqual(by_runtime["openhands"]["official_tests_json_runs"], "0")
@@ -83,11 +83,11 @@ class ExternalValidityEvidenceTest(unittest.TestCase):
         self.assertEqual(adaptive_rows["mini_sweagent_programbench"]["avg_extra_tokens_est"], "45.0")
         self.assertEqual(adaptive_rows["openhands"]["avg_extra_tokens_est"], "15.0")
         self.assertIn(
-            "paper_main_gate",
+            "primary_official_programbench",
             adaptive_rows["opencode"]["condition_claim_scope"],
         )
         self.assertIn(
-            "upper_bound",
+            "programbench_aligned_mechanism",
             adaptive_rows["mini_sweagent_programbench"]["condition_claim_scope"],
         )
         self.assertIn(

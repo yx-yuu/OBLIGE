@@ -294,9 +294,9 @@ def build_external_summary(
         "no_agent_facing_leak_runs": sum(
             1 for row in runs if not truthy(row.get("agent_facing_condition_leak"))
         ),
-        "claim_boundary": (
-            "cross-agent evidence describes interface external validity; "
-            "paired effects must still be interpreted within each agent/model/surface tuple"
+        "artifact_scope": (
+            "Cross-agent evidence reports interface external validity over "
+            "agent/model/surface tuples."
         ),
     }
 
@@ -313,11 +313,11 @@ def render_external_boundaries(summary: dict[str, Any]) -> str:
             f"- runs: {summary['runs']}",
             f"- official tests-json runs: {summary['official_tests_json_runs']}",
             "",
-            "## Writing Boundary",
+            "## Interpretation",
             "",
-            f"- {summary['claim_boundary']}",
-            "- Do not compare absolute token cost across different agent runtimes as a causal attack effect.",
-            "- Workflow-enforced or runtime-hooked evidence is a mechanism or upper-bound result, not natural adoption by itself.",
+            f"- {summary['artifact_scope']}",
+            "- Paired CAF and utility deltas are grouped by matched agent, model, task, and adoption surface.",
+            "- Workflow-enforced and runtime-hooked rows expose the mechanism under stronger adoption surfaces.",
             "",
         ]
     )
@@ -368,10 +368,10 @@ def agent_role(agent_runtime: str) -> str:
 def surface_scope(agent_runtime: str, rows: list[dict[str, str]]) -> str:
     surface = normalized_surface(rows[0]) if rows else ""
     if agent_runtime == "opencode":
-        return "primary mechanism and paper-main candidate runtime"
+        return "primary mechanism runtime"
     if agent_runtime == "mini_sweagent_programbench":
         if surface in {"runtime_hook", "workflow_instruction"}:
-            return "ProgramBench-aligned mechanism validation or upper-bound evidence"
+            return "ProgramBench-aligned mechanism validation"
         return "ProgramBench-aligned adoption probe"
     if agent_runtime == "openhands":
         return "external-validity smoke or pilot evidence"
@@ -386,13 +386,13 @@ def condition_scope(
     official = any(row.get("programbench_scoring_mode") == "official_tests_json" for row in rows)
     clean = condition in CLEAN_CONDITIONS or condition == "no_attack"
     if agent_runtime == "opencode" and official:
-        return "eligible_for_paper_main_gate_if_admission_passes"
+        return "primary_official_programbench_evidence"
     if clean:
         return "baseline_or_adoption_reference"
     if agent_runtime == "mini_sweagent_programbench":
-        return "mechanism_validation_or_upper_bound_not_natural_adoption"
+        return "programbench_aligned_mechanism_validation"
     if agent_runtime == "openhands":
-        return "external_validity_pilot_not_paper_main"
+        return "external_validity_pilot"
     return "external_validity_supporting_evidence"
 
 

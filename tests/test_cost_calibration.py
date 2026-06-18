@@ -40,7 +40,7 @@ class CostCalibrationEvidenceTest(unittest.TestCase):
         self.assertEqual(summary["reported_token_target_interval_hit_rate"], 0.0)
         self.assertEqual(summary["reported_token_overshoot_rate"], 1.0)
         self.assertEqual(summary["runs_with_reported_token_baseline"], 1)
-        self.assertIn("controller hits do not imply reported-token hits", boundaries)
+        self.assertIn("separate evidence channels", boundaries)
 
         by_condition = {row["condition"]: row for row in summary_rows}
         self.assertEqual(

@@ -227,7 +227,7 @@ def build_methodology_claim_rows(
                     covered=covered,
                     observed=observed,
                 ),
-                "paper_use_scope": claim_scope(spec["claim_id"], tables),
+                "artifact_scope": claim_scope(spec["claim_id"], tables),
             }
         )
     return rows
@@ -325,7 +325,7 @@ def build_mechanism_link_rows(
                 ),
                 "final_submission_rate": row.get("final_submission_rate", ""),
                 "mechanism_signal": mechanism_signal(row),
-                "paper_use_scope": "mechanism_evidence_not_paper_main_by_itself",
+                "artifact_scope": "mechanism_evidence_row",
             }
         )
     return rows
@@ -413,9 +413,9 @@ def build_methodology_summary(
                 if row.get("linked_claim_id")
             }
         ),
-        "claim_boundary": (
-            "Methodology coverage shows whether logs expose the paper-method fields; "
-            "it does not prove the empirical effect without admitted experiment results."
+        "artifact_scope": (
+            "Methodology coverage summarizes whether run logs expose the mechanism "
+            "fields required by the Evaluation analysis."
         ),
     }
 
@@ -423,7 +423,7 @@ def build_methodology_summary(
 def render_methodology_boundaries(summary: dict[str, Any]) -> str:
     return "\n".join(
         [
-            "# Methodology Evidence Boundaries",
+            "# Methodology Evidence Map",
             "",
             "This bundle maps formal-method claims to logged fields and mechanism tables.",
             "",
@@ -433,8 +433,8 @@ def render_methodology_boundaries(summary: dict[str, Any]) -> str:
             "",
             "## Interpretation",
             "",
-            "- Field coverage is necessary for the L3 methodology claim, but it is not sufficient by itself.",
-            "- Mechanism ablations should be reported as mechanism evidence unless paper-main admission gates pass.",
+            "- Field coverage links methodology claims to observable run artifacts.",
+            "- Mechanism ablations summarize the contribution of individual validation-feedback components.",
             "- Controller proxy target hits and reported-token target hits remain separate evidence.",
             "",
         ]

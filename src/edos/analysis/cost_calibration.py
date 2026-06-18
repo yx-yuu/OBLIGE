@@ -294,9 +294,9 @@ def build_cost_calibration_summary(
                 Counter(str(row.get("calibration_status", "")) for row in pair_rows).items()
             )
         ),
-        "claim_boundary": (
-            "controller proxy calibration and reported-token target fit are separate "
-            "evidence channels; controller hits do not imply reported-token hits."
+        "artifact_scope": (
+            "Controller proxy calibration and reported-token target fit are reported "
+            "as separate evidence channels."
         ),
     }
 
@@ -317,7 +317,7 @@ def render_cost_calibration_boundaries(summary: dict[str, Any]) -> str:
             "- `controller_*` fields describe the internal budget proxy used by the verifier controller.",
             "- `reported_token_*` fields describe observed token cost relative to a paired clean/no-attack baseline.",
             "- A controller target hit must not be reported as a reported-token target hit.",
-            f"- {summary['claim_boundary']}",
+            f"- {summary['artifact_scope']}",
             "",
         ]
     )

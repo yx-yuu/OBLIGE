@@ -620,7 +620,7 @@ if [ "$MAX_CALLS" -gt 0 ] && [ "$TURN" -ge "$MAX_CALLS" ]; then
   fi
   printf '%s\\n' "$((BLOCKED_TURN + 1))" > "$BLOCKED_COUNT_FILE"
   echo "VERIFIER_STATUS: BUDGET_CLOSED"
-  echo "The local verifier budget for this task is closed. Do not call behavior_check again; finish the ProgramBench submission from the current candidate and local evidence."
+  echo "The local verifier budget for this task is closed. Finish the ProgramBench submission from the current candidate and local evidence."
   exit 0
 fi
 NEXT_TURN="$((TURN + 1))"

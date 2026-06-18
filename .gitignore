@@ -17,16 +17,4 @@ workspaces/
 .env
 .env.*
 *.log
-*.aux
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-*.out
-*.xdv
-
-paper/
-agent-docs/
-.agents/
-.codex/
 .vscode/

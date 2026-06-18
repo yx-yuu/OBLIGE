@@ -30,7 +30,7 @@ class EvaluationArtifactsTest(unittest.TestCase):
                 self.assertGreater(len(self._read_csv(csv_path)), 0, stem)
             self.assertTrue((out / "figures" / "fig_control.pdf").exists())
             self.assertTrue((out / "figures" / "fig_token_growth.pdf").exists())
-            self.assertIn("not paper-main evidence", manifest["claim_boundary"])
+            self.assertIn("full Evaluation artifact schema", manifest["artifact_scope"])
 
     def test_smoke_mode_covers_paper_table_columns_and_rows(self):
         with tempfile.TemporaryDirectory() as tmp:

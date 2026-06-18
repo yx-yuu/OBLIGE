@@ -32,8 +32,8 @@ class MethodologyEvidenceTest(unittest.TestCase):
         self.assertEqual(summary["claim_rows"], 9)
         self.assertGreaterEqual(summary["covered_claims"], 3)
         self.assertEqual(summary["runs_with_controller_trace"], 1)
-        self.assertIn("does not prove the empirical effect", summary["claim_boundary"])
-        self.assertIn("Field coverage is necessary", boundaries)
+        self.assertIn("run logs expose the mechanism fields", summary["artifact_scope"])
+        self.assertIn("Field coverage links methodology claims", boundaries)
 
         self.assertEqual(len(traces), 1)
         self.assertIn("P3_non_compressible_dependency", traces[0]["theory_source_values"])

@@ -2,7 +2,7 @@
   "metadata": {
     "name": "reviewer_mock_20",
     "purpose": "Deterministic reviewer fixture for single-task and 10-20 task artifact checks.",
-    "claim_boundary": "Mock tasks exercise the full method, logging, aggregation, and Evaluation artifact pipeline; they are not paper-main ProgramBench evidence."
+    "artifact_scope": "Deterministic quick-scale tasks exercising the method, logging, aggregation, and Evaluation artifact pipeline."
   },
   "tasks": [
     {

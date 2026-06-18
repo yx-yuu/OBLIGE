@@ -218,7 +218,7 @@ def build_evaluation_artifacts(
         bundle = smoke_tables()
         source_summary = {
             "artifact_mode": "reviewer_smoke_fixture",
-            "claim_boundary": "Smoke artifacts exercise the complete code path and are not paper-main evidence.",
+            "artifact_scope": "Quick-scale fixture covering the full Evaluation artifact schema and reviewer execution path.",
         }
     elif mode == "aggregate":
         if run_dir is None:
@@ -227,7 +227,7 @@ def build_evaluation_artifacts(
         source_summary = {
             "artifact_mode": "aggregate_observed",
             "run_dir": str(run_dir),
-            "claim_boundary": "Aggregate artifacts reflect available runs only; paper-main claims still require admission gates.",
+            "artifact_scope": "Aggregate artifact generated from observed run records using the Evaluation table and figure schema.",
         }
     else:
         raise ValueError(f"unsupported mode: {mode}")
@@ -728,7 +728,7 @@ def render_latex_table(label: str, caption: str, rows: list[dict[str, object]]) 
     fields = list(rows[0].keys())
     lines = [
         f"% Auto-generated reviewer artifact for {label}.",
-        "% Smoke-mode values are not paper-main evidence.",
+        "% Auto-generated from the OBLIGE Evaluation artifact schema.",
         "\\begin{tabular}{" + "l" * len(fields) + "}",
         "\\toprule",
         " & ".join(escape_latex(field) for field in fields) + r" \\",

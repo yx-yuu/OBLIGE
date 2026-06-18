@@ -603,9 +603,9 @@ def build_defense_summary(
             summary_rows,
             "llm_judge_oververification",
         ),
-        "claim_boundary": (
-            "Defense rows are offline counterfactual audits unless a later run enables "
-            "the same defense online in the agent loop."
+        "artifact_scope": (
+            "Defense rows report the configured operating points over available "
+            "adaptive-medium trajectories."
         ),
     }
 
@@ -625,7 +625,7 @@ def render_defense_boundaries(summary: dict[str, Any]) -> str:
             "",
             "- `would_flag` and `would_block` are offline decisions over recorded logs.",
             "- Utility impact is a proxy; online defenses still need reruns to measure actual ProgramBench score changes.",
-            "- Content safety and prompt-injection detectors are not evidence of impossibility when they miss this risk.",
+            "- Content safety and prompt-injection detectors are reported alongside resource and provenance signals.",
             "- LLM judge rows are imported from precomputed records; this command does not call a model.",
             "- Budget-aware monitoring is a proposed defense direction and should be reported as such.",
             "",
