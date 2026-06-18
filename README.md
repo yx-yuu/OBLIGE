@@ -91,8 +91,6 @@ tests/                 Unit and integration tests for the public artifact
 ### Requirements
 
 - Python 3.10 or newer
-- `matplotlib` for optional plotting utilities
-- Optional: `pytest` if you prefer pytest over the standard `unittest` runner
 - Optional for real-agent ProgramBench runs: Docker, official ProgramBench
   assets, task images, OpenCode/OpenHands/mini-SWE-agent tooling, and a
   configured model endpoint
