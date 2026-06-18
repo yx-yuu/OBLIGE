@@ -1,15 +1,8 @@
-# OBLIGE Artifact  OBLIGE 手工艺品
+# OBLIGE
 
-Coercing Long-Horizon Coding Agents into Budget-Controlled Over-Verification
-胁迫长地平线编码代理进行受预算控制的过度验证
-胁迫长地平线编码代理进行受预算控制的过度验证
-via Adversarial Validation Feedback
-通过对抗验证反馈
-通过对抗验证反馈
+Coercing Long-Horizon Coding Agents into Budget-Controlled Over-Verification via Adversarial Validation Feedback
 
 ## Overview
-## 概览
-## 概览
 
 OBLIGE is an experimental framework for studying validation-feedback
 over-compliance in long-horizon coding agents on long-horizon software
@@ -108,12 +101,11 @@ tests/                 Unit and integration tests for the public artifact
 
 ```bash
 git clone https://github.com/yx-yuu/OBLIGE.git
-cd OBLIGE  cd 义务
+cd OBLIGE  
 python -m pip install -e .
 ```
 
 Verify the package import:
-验证软件包导入：
 
 ```bash
 PYTHONPATH=src python -c "from edos.verifier.api import BehaviorVerifier; print('OK')"
@@ -126,7 +118,6 @@ local adapter. It is useful for checking the installation and the experiment
 pipeline before running real-agent configurations.
 
 Single-task execution:
-单任务执行：
 
 ```bash
 scripts/quickstart.sh 1 runs/quick_single artifacts/quick_single_eval
