@@ -243,7 +243,7 @@ class ProgramBenchIntegrationTest(unittest.TestCase):
             self._write_json(
                 run / "programbench_score.json",
                 {
-                    "score_status": "mock",
+                    "score_status": "local_reference",
                     "tests_passed_fraction": 0.7,
                     "candidate_build_success": True,
                     "final_submission_seen": True,
@@ -351,7 +351,7 @@ class ProgramBenchIntegrationTest(unittest.TestCase):
                 },
             )
             self._write_json(run / "usage.json", {"input_tokens_est": 1})
-            self._write_json(run / "programbench_score.json", {"score_status": "mock"})
+            self._write_json(run / "programbench_score.json", {"score_status": "local_reference"})
             self._write_json(run / "failure_label.json", {"failure_label": None})
             (run / "events.jsonl").write_text("", encoding="utf-8")
             eval_dir = (
@@ -446,7 +446,7 @@ class ProgramBenchIntegrationTest(unittest.TestCase):
                 },
             )
             self._write_json(run / "usage.json", {"input_tokens_est": 1})
-            self._write_json(run / "programbench_score.json", {"score_status": "mock"})
+            self._write_json(run / "programbench_score.json", {"score_status": "local_reference"})
             self._write_json(run / "failure_label.json", {"failure_label": None})
             (run / "events.jsonl").write_text("", encoding="utf-8")
             eval_dir = run_dir / "programbench_runs" / "clean_verifier" / instance_id
@@ -530,7 +530,7 @@ class ProgramBenchIntegrationTest(unittest.TestCase):
             self._write_json(
                 run / "programbench_score.json",
                 {
-                    "score_status": "mock",
+                    "score_status": "local_reference",
                     "tests_passed_fraction": 0.7,
                     "candidate_build_success": True,
                     "final_submission_seen": True,
@@ -833,7 +833,7 @@ class ProgramBenchIntegrationTest(unittest.TestCase):
                             {"role": "user", "content": "task"},
                             {
                                 "role": "assistant",
-                                "content": "VERIFIER_CALL behavior_check fake assistant mention",
+                                "content": "VERIFIER_CALL behavior_check sample assistant mention",
                             },
                             {"role": "tool", "content": verifier_output},
                             {"role": "assistant", "content": "done"},

@@ -1,29 +1,29 @@
 {
   "experiment": {
-    "name": "openhands_headless_stub",
+    "name": "openhands_headless_local",
     "seed": 20260602,
-    "output_dir": "runs/openhands_headless_stub"
+    "output_dir": "runs/openhands_headless_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock.json",
+    "task_list": "configs/task_splits/smoke_local.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },
   "agent": {
     "runtime": "openhands",
-    "version": "headless-stub",
-    "model": "openhands-headless-stub",
-    "model_version": "stub",
+    "version": "headless-local-reference",
+    "model": "openhands-headless-local-reference",
+    "model_version": "local-reference",
     "max_steps": 8,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/openhands_headless_stub.py",
+      "{repo_root}/scripts/openhands_headless_local.py",
       "--headless",
       "--json",
       "--override-with-envs",

@@ -14,14 +14,14 @@ from edos.programbench.tasks import load_task_list
 
 class ReviewerQuickstartTest(unittest.TestCase):
     def test_reviewer_config_covers_twenty_tasks_and_full_condition_matrix(self):
-        config = load_experiment_config("configs/experiments/reviewer_quick_mock.json")
+        config = load_experiment_config("configs/experiments/reviewer_quick_local.json")
         smoke = load_experiment_config("configs/experiments/smoke.json")
-        tasks = load_task_list("configs/task_splits/reviewer_mock_20.json")
+        tasks = load_task_list("configs/task_splits/reviewer_local_20.json")
         conditions = [item.condition for item in config.conditions]
 
-        self.assertEqual(config.name, "reviewer_quick_mock")
-        self.assertEqual(config.agent_runtime, "mock")
-        self.assertEqual(config.task_list, "configs/task_splits/reviewer_mock_20.json")
+        self.assertEqual(config.name, "reviewer_quick_local")
+        self.assertEqual(config.agent_runtime, "deterministic_local")
+        self.assertEqual(config.task_list, "configs/task_splits/reviewer_local_20.json")
         self.assertEqual(len(tasks), 20)
         self.assertEqual(len(config.conditions), len(smoke.conditions) + 1)
         for condition in [item.condition for item in smoke.conditions]:
@@ -71,7 +71,7 @@ class ReviewerQuickstartTest(unittest.TestCase):
                 self.assertTrue(Path(figure["path"]).exists(), label)
 
             run_index = json.loads((run_dir / "run_index.json").read_text(encoding="utf-8"))
-            config = load_experiment_config("configs/experiments/reviewer_quick_mock.json")
+            config = load_experiment_config("configs/experiments/reviewer_quick_local.json")
             self.assertEqual(len(run_index), len(config.conditions))
             defense_rows = self._read_csv(eval_dir / "tables" / "table_defense.csv")
             self.assertGreater(len(defense_rows), 0)

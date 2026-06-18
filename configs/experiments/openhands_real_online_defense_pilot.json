@@ -5,12 +5,12 @@
     "output_dir": "runs/openhands_real_online_defense_pilot"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock.json",
+    "task_list": "configs/task_splits/smoke_local.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },

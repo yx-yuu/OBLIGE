@@ -158,7 +158,7 @@ class ExternalValidityEvidenceTest(unittest.TestCase):
     ) -> None:
         aggregate = root / "aggregate"
         scoring_mode = "official_tests_json" if official else ""
-        score_status = "programbench_eval" if official else "stub"
+        score_status = "programbench_eval" if official else "local_reference"
         self._write_csv(
             aggregate / "runs.csv",
             [

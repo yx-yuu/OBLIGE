@@ -12,7 +12,7 @@ class SurfaceTest(unittest.TestCase):
         self.assertEqual(normalize_entry_surface("light_prompt"), "user_prompt")
 
     def test_config_can_override_entry_surface(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         self.assertEqual(config.conditions[0].entry_surface, "mcp_or_tool_manifest")
         self.assertEqual(config.conditions[0].verifier_exposure_condition, "openhands_mcp")
 

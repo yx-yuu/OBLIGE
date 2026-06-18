@@ -45,10 +45,10 @@ def load_experiment_config(path: str | Path) -> ExperimentConfig:
         programbench_docker_host=os.environ.get(
             "EDOS_DOCKER_HOST", programbench.get("docker_host", "")
         ),
-        agent_runtime=agent.get("runtime", "mock"),
-        agent_version=agent.get("version", "mock"),
-        model=agent.get("model", "mock-model"),
-        model_version=agent.get("model_version", "mock"),
+        agent_runtime=agent.get("runtime", "deterministic_local"),
+        agent_version=agent.get("version", "local-reference"),
+        model=agent.get("model", "deterministic-local-model"),
+        model_version=agent.get("model_version", "local-reference"),
         max_steps=int(agent.get("max_steps", 20)),
         timeout_seconds=int(agent.get("timeout_seconds", 300)),
         agent_command=agent.get("command", []),

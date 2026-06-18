@@ -179,7 +179,7 @@ online-defense condition.
 
 ```bash
 PYTHONPATH=src python -m edos.cli.run_experiment \
-  --config configs/experiments/reviewer_quick_mock.json \
+  --config configs/experiments/reviewer_quick_local.json \
   --task-limit 10 \
   --output-dir runs/reviewer_10
 
@@ -266,7 +266,7 @@ PYTHONPATH=src python -m edos.cli.build_defense_evidence \
 | Configuration | Purpose |
 |---|---|
 | `configs/experiments/smoke.json` | Deterministic local smoke matrix |
-| `configs/experiments/reviewer_quick_mock.json` | 20-task reviewer quick matrix |
+| `configs/experiments/reviewer_quick_local.json` | 20-task reviewer quick matrix |
 | `configs/experiments/opencode_real_programbench_mechanism_cleanroom_pilot.json` | OpenCode cleanroom ProgramBench pilot |
 | `configs/experiments/opencode_real_programbench_mechanism_cleanroom_pilot30.json` | 30-task OpenCode ProgramBench pilot |
 | `configs/experiments/opencode_real_mechanism_ablation_pilot.json` | Mechanism ablation pilot |

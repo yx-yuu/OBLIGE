@@ -1,29 +1,29 @@
 {
   "experiment": {
-    "name": "opencode_repair_pagination_budget_stub",
+    "name": "opencode_repair_pagination_budget_local",
     "seed": 20260524,
-    "output_dir": "runs/opencode_repair_pagination_budget_stub"
+    "output_dir": "runs/opencode_repair_pagination_budget_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "task_list": "configs/task_splits/smoke_local_1.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },
   "agent": {
     "runtime": "opencode",
-    "version": "stub",
-    "model": "opencode-budget-control-signal-stub",
-    "model_version": "stub",
+    "version": "local-reference",
+    "model": "opencode-budget-control-signal-local-reference",
+    "model_version": "local-reference",
     "max_steps": 8,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/opencode_agent_stub.py"
+      "{repo_root}/scripts/opencode_agent_reference.py"
     ]
   },
   "conditions": [

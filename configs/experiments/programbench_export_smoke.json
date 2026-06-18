@@ -11,21 +11,21 @@
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ],
     "eval_image_tag": "task"
   },
   "agent": {
     "runtime": "local_command",
-    "version": "stub",
-    "model": "local-command-stub",
-    "model_version": "stub",
+    "version": "local-reference",
+    "model": "local-command-local-reference",
+    "model_version": "local-reference",
     "max_steps": 1,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/local_agent_stub.py"
+      "{repo_root}/scripts/local_agent_reference.py"
     ]
   },
   "conditions": [

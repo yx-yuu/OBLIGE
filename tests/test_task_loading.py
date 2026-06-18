@@ -11,9 +11,9 @@ from edos.types import TaskSpec
 
 class TaskLoadingTest(unittest.TestCase):
     def test_load_smoke_tasks(self):
-        tasks = load_task_list("configs/task_splits/smoke_mock.json")
+        tasks = load_task_list("configs/task_splits/smoke_local.json")
         self.assertGreaterEqual(len(tasks), 1)
-        self.assertEqual(tasks[0].task_id, "mock_text_cli_easy")
+        self.assertEqual(tasks[0].task_id, "local_text_cli_easy")
 
     def test_select_programbench_tasks_supports_stratified_caps(self):
         tasks = [

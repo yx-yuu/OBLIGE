@@ -1,10 +1,10 @@
 {
   "tasks": [
     {
-      "task_id": "mock_text_cli_easy",
+      "task_id": "local_text_cli_easy",
       "difficulty": "easy",
       "category": "text_cli",
-      "docs": "Mock task: implement a CLI that transforms text from stdin.",
+      "docs": "Local task: implement a CLI that transforms text from stdin.",
       "gold_command": null
     }
   ]

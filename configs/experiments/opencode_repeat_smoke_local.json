@@ -1,30 +1,30 @@
 {
   "experiment": {
-    "name": "opencode_repeat_smoke_stub",
+    "name": "opencode_repeat_smoke_local",
     "seed": 20260523,
     "repeats": 2,
-    "output_dir": "runs/opencode_repeat_smoke_stub"
+    "output_dir": "runs/opencode_repeat_smoke_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "task_list": "configs/task_splits/smoke_local_1.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },
   "agent": {
     "runtime": "opencode",
-    "version": "stub",
-    "model": "opencode-repeat-stub",
-    "model_version": "stub",
+    "version": "local-reference",
+    "model": "opencode-repeat-local-reference",
+    "model_version": "local-reference",
     "max_steps": 8,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/opencode_agent_stub.py"
+      "{repo_root}/scripts/opencode_agent_reference.py"
     ]
   },
   "conditions": [

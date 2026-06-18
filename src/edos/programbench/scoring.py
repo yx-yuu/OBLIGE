@@ -7,7 +7,7 @@ from pathlib import Path
 from edos.types import ExperimentConfig, TaskProgress, TaskSpec, WorkspaceSpec
 
 
-def mock_score(task_progress: TaskProgress, failure_label: str | None) -> dict:
+def reference_score(task_progress: TaskProgress, failure_label: str | None) -> dict:
     candidate_build_success = bool(task_progress.last_compile_success)
     final_submission_seen = bool(task_progress.final_submission_seen)
     if failure_label in {"no_candidate", "agent_timeout", "step_limit"}:
@@ -29,7 +29,7 @@ def mock_score(task_progress: TaskProgress, failure_label: str | None) -> dict:
         "tests_total": 10,
         "candidate_build_success": candidate_build_success,
         "final_submission_seen": final_submission_seen,
-        "score_status": "mock",
+        "score_status": "local_reference",
     }
 
 

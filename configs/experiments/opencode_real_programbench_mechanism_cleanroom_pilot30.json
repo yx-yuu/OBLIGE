@@ -15,7 +15,7 @@
     "docker_executable": "docker",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },

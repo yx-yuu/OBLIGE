@@ -5,25 +5,25 @@
     "output_dir": "runs/opencode_spike_smoke"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock.json",
+    "task_list": "configs/task_splits/smoke_local.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },
   "agent": {
     "runtime": "opencode",
-    "version": "stub",
-    "model": "opencode-spike-stub",
-    "model_version": "stub",
+    "version": "local-reference",
+    "model": "opencode-spike-local-reference",
+    "model_version": "local-reference",
     "max_steps": 8,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/opencode_agent_stub.py"
+      "{repo_root}/scripts/opencode_agent_reference.py"
     ]
   },
   "conditions": [

@@ -492,8 +492,8 @@ class AggregateTest(unittest.TestCase):
             {
                 "run_id": "no",
                 "task_id": "task",
-                "agent_runtime": "mock",
-                "model": "mock",
+                "agent_runtime": "deterministic_local",
+                "model": "deterministic_local_model",
                 "condition": "no_attack",
                 "target_level": "none",
                 "verifier_exposure_condition": "no_mention",
@@ -510,8 +510,8 @@ class AggregateTest(unittest.TestCase):
             {
                 "run_id": "clean_light",
                 "task_id": "task",
-                "agent_runtime": "mock",
-                "model": "mock",
+                "agent_runtime": "deterministic_local",
+                "model": "deterministic_local_model",
                 "condition": "clean_verifier",
                 "target_level": "none",
                 "verifier_exposure_condition": "light_prompt",
@@ -528,8 +528,8 @@ class AggregateTest(unittest.TestCase):
             {
                 "run_id": "clean_tool",
                 "task_id": "task",
-                "agent_runtime": "mock",
-                "model": "mock",
+                "agent_runtime": "deterministic_local",
+                "model": "deterministic_local_model",
                 "condition": "clean_verifier",
                 "target_level": "none",
                 "verifier_exposure_condition": "tool_available",
@@ -546,8 +546,8 @@ class AggregateTest(unittest.TestCase):
             {
                 "run_id": "attack",
                 "task_id": "task",
-                "agent_runtime": "mock",
-                "model": "mock",
+                "agent_runtime": "deterministic_local",
+                "model": "deterministic_local_model",
                 "condition": "adaptive_full_medium",
                 "target_level": "medium",
                 "verifier_exposure_condition": "light_prompt",

@@ -94,7 +94,7 @@ class MergeExperimentShardsTest(unittest.TestCase):
                     "run_id": run_id,
                     "run_dir": str(run_dir),
                     "status": "complete",
-                    "score_status": "mock",
+                    "score_status": "local_reference",
                 }
             ],
         )
@@ -116,7 +116,7 @@ class MergeExperimentShardsTest(unittest.TestCase):
             / "submission.tar.gz"
         )
         artifact.parent.mkdir(parents=True)
-        artifact.write_bytes(b"fake submission")
+        artifact.write_bytes(b"sample submission")
 
     def _write_json(self, path: Path, value: object) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)

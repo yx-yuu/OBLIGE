@@ -27,9 +27,9 @@ def experiment(tmp):
         scoring_command=[],
         programbench_eval_command=[],
         programbench_eval_image_tag="task",
-        agent_runtime="mock",
+        agent_runtime="deterministic_local",
         agent_version="test",
-        model="mock",
+        model="deterministic_local_model",
         model_version="test",
         max_steps=1,
         timeout_seconds=5,
@@ -167,7 +167,7 @@ class WorkspaceScoringTest(unittest.TestCase):
             )
             calls = []
 
-            def fake_run(args, **kwargs):
+            def sample_run(args, **kwargs):
                 calls.append((args, kwargs))
                 if args[:2] == ["docker", "ps"]:
                     self.assertEqual(
@@ -199,7 +199,7 @@ class WorkspaceScoringTest(unittest.TestCase):
                     return subprocess.CompletedProcess(args, 0, stdout="", stderr="")
                 self.fail(f"Unexpected subprocess call: {args}")
 
-            with patch("edos.programbench.workspace.subprocess.run", side_effect=fake_run):
+            with patch("edos.programbench.workspace.subprocess.run", side_effect=sample_run):
                 workspace = prepare_workspace(
                     experiment=config,
                     task=task,
@@ -289,7 +289,7 @@ class WorkspaceScoringTest(unittest.TestCase):
         )
         self.assertEqual(score["tests_passed_fraction"], 0.75)
 
-    def test_scorer_stub_accepts_compile_script_without_candidate_py(self):
+    def test_scorer_local_accepts_compile_script_without_candidate_py(self):
         with tempfile.TemporaryDirectory() as tmp:
             workspace = Path(tmp) / "workspace"
             workspace.mkdir()
@@ -306,7 +306,7 @@ class WorkspaceScoringTest(unittest.TestCase):
                 encoding="utf-8",
             )
             completed = subprocess.run(
-                ["python3", "scripts/scorer_stub.py", str(workspace)],
+                ["python3", "scripts/reference_scorer.py", str(workspace)],
                 text=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,

@@ -31,7 +31,7 @@ def main() -> None:
         "tests_total": 10,
         "candidate_build_success": build_success,
         "final_submission_seen": build_success,
-        "score_status": "stub",
+        "score_status": "local_reference",
         "build_returncode": build_returncode,
     }
     print(json.dumps(score))

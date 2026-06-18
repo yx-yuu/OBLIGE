@@ -34,7 +34,7 @@ def main() -> None:
     experiment_name = os.environ.get("EDOS_EXPERIMENT_NAME", "")
     candidate = workspace / "candidate.py"
     candidate.write_text(
-        "# mock opencode candidate\nprint('ok')\n",
+        "# local reference opencode candidate\nprint('ok')\n",
         encoding="utf-8",
     )
     compile_script = workspace / "compile.sh"
@@ -49,7 +49,7 @@ def main() -> None:
         encoding="utf-8",
     )
     compile_script.chmod(0o755)
-    print(f"opencode stub wrote candidate source for {os.environ['EDOS_TASK_ID']}")
+    print(f"opencode local reference wrote candidate source for {os.environ['EDOS_TASK_ID']}")
     print("build success")
     print("run candidate")
     is_mechanism_ablation_run = (

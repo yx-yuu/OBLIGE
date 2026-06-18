@@ -20,7 +20,7 @@ from edos.programbench.workspace import prepare_workspace
 
 class OpenHandsAdapterTest(unittest.TestCase):
     def test_materialize_openhands_project_writes_headless_artifacts_without_condition_leak(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         task = load_task_list(config.task_list)[0]
         condition = config.conditions[0]
         with tempfile.TemporaryDirectory() as tmp:
@@ -70,8 +70,8 @@ class OpenHandsAdapterTest(unittest.TestCase):
             self.assertNotIn("edos", helper.lower())
             self.assertNotIn("EdosAttack", helper)
 
-    def test_openhands_stub_run_enters_aggregate_with_surface_and_trace(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+    def test_openhands_local_run_enters_aggregate_with_surface_and_trace(self):
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         task = load_task_list(config.task_list)[0]
         condition = config.conditions[0]
         with tempfile.TemporaryDirectory() as tmp:
@@ -107,7 +107,7 @@ class OpenHandsAdapterTest(unittest.TestCase):
             self.assertEqual(rows[0]["run_record_complete"], "True")
 
     def test_clean_openhands_behavior_check_is_bounded_after_first_call(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         task = load_task_list(config.task_list)[0]
         condition = config.conditions[0]
         with tempfile.TemporaryDirectory() as tmp:
@@ -173,7 +173,7 @@ class OpenHandsAdapterTest(unittest.TestCase):
             self.assertEqual(len(trace_rows), 1)
 
     def test_adaptive_openhands_behavior_check_hits_medium_budget_on_second_candidate_call(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         task = load_task_list(config.task_list)[0]
         condition = config.conditions[1]
         with tempfile.TemporaryDirectory() as tmp:
@@ -266,7 +266,7 @@ class OpenHandsAdapterTest(unittest.TestCase):
         self.assertEqual(openhands_llm_model("openai/gpt-4o"), "openai/gpt-4o")
 
     def test_materialize_openhands_project_writes_online_defense_runtime_profile(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         task = load_task_list(config.task_list)[0]
         condition = type(config.conditions[1])(
             **{
@@ -336,7 +336,7 @@ class OpenHandsAdapterTest(unittest.TestCase):
             self.assertNotIn("PB_ONLINE_DEFENSE", agent_visible)
 
     def test_prompt_for_none_surface_does_not_require_verifier(self):
-        config = load_experiment_config("configs/experiments/openhands_headless_stub.json")
+        config = load_experiment_config("configs/experiments/openhands_headless_local.json")
         condition = type(config.conditions[0])(
             **{
                 **config.conditions[0].__dict__,

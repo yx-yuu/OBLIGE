@@ -118,7 +118,7 @@ class OpenCodeAdapterTest(unittest.TestCase):
 
     def test_materialize_opencode_project_includes_condition_prompt_hint(self):
         config = load_experiment_config(
-            "configs/experiments/opencode_repair_pagination_smoke_stub.json"
+            "configs/experiments/opencode_repair_pagination_smoke_local.json"
         )
         task = load_task_list(config.task_list)[0]
         condition = ConditionSpec(
@@ -433,7 +433,7 @@ class OpenCodeAdapterTest(unittest.TestCase):
 
     def test_behavior_check_uses_internal_profile_for_ablation_condition(self):
         config = load_experiment_config(
-            "configs/experiments/opencode_mechanism_ablation_stub.json"
+            "configs/experiments/opencode_mechanism_ablation_local.json"
         )
         task = load_task_list(config.task_list)[0]
         conditions = {condition.condition: condition for condition in config.conditions}
@@ -734,9 +734,9 @@ class OpenCodeAdapterTest(unittest.TestCase):
         self.assertFalse(audit["agent_facing_condition_leak"])
         self.assertEqual(audit["agent_facing_condition_leak_sources"], [])
 
-    def test_opencode_stub_can_trigger_repair_and_pagination(self):
+    def test_opencode_local_can_trigger_repair_and_pagination(self):
         config = load_experiment_config(
-            "configs/experiments/opencode_repair_pagination_smoke_stub.json"
+            "configs/experiments/opencode_repair_pagination_smoke_local.json"
         )
         task = load_task_list(config.task_list)[0]
         repair = next(
@@ -797,9 +797,9 @@ class OpenCodeAdapterTest(unittest.TestCase):
             self.assertEqual(pagination_trace[-1]["pagination_count"], 2)
             self.assertTrue(pagination_trace[-1]["batching_signal"])
 
-    def test_opencode_stub_budget_proxy_keeps_repair_and_pagination_auditable(self):
+    def test_opencode_local_budget_proxy_keeps_repair_and_pagination_auditable(self):
         config = load_experiment_config(
-            "configs/experiments/opencode_repair_pagination_budget_stub.json"
+            "configs/experiments/opencode_repair_pagination_budget_local.json"
         )
         task = load_task_list(config.task_list)[0]
         repair = next(
@@ -868,9 +868,9 @@ class OpenCodeAdapterTest(unittest.TestCase):
             self.assertEqual(pagination_trace[-1]["pagination_count"], 2)
             self.assertTrue(pagination_trace[-1]["marker_echoed"])
 
-    def test_opencode_stub_mechanism_ablation_budget_control_has_observable_effect(self):
+    def test_opencode_local_mechanism_ablation_budget_control_has_observable_effect(self):
         config = load_experiment_config(
-            "configs/experiments/opencode_mechanism_ablation_stub.json"
+            "configs/experiments/opencode_mechanism_ablation_local.json"
         )
         task = load_task_list(config.task_list)[0]
         conditions = {condition.condition: condition for condition in config.conditions}
@@ -1184,13 +1184,13 @@ class OpenCodeAdapterTest(unittest.TestCase):
         self.assertEqual(config.output_dir, "runs/opencode_real_repair_pagination_calibration")
 
     def test_opencode_repair_pagination_budget_configs_use_nonzero_proxy(self):
-        stub_config = load_experiment_config(
-            "configs/experiments/opencode_repair_pagination_budget_stub.json"
+        local_config = load_experiment_config(
+            "configs/experiments/opencode_repair_pagination_budget_local.json"
         )
         real_config = load_experiment_config(
             "configs/experiments/opencode_real_repair_pagination_budget_calibration.json"
         )
-        for config in [stub_config, real_config]:
+        for config in [local_config, real_config]:
             conditions = {condition.condition: condition for condition in config.conditions}
             self.assertEqual(
                 set(conditions),
@@ -1225,8 +1225,8 @@ class OpenCodeAdapterTest(unittest.TestCase):
         )
 
     def test_opencode_mechanism_ablation_configs_cover_core_mechanisms(self):
-        stub_config = load_experiment_config(
-            "configs/experiments/opencode_mechanism_ablation_stub.json"
+        local_config = load_experiment_config(
+            "configs/experiments/opencode_mechanism_ablation_local.json"
         )
         real_config = load_experiment_config(
             "configs/experiments/opencode_real_mechanism_ablation_pilot.json"
@@ -1242,10 +1242,10 @@ class OpenCodeAdapterTest(unittest.TestCase):
             "naive_padding",
             "fixed_depth_tree",
         }
-        for config in [stub_config, real_config]:
+        for config in [local_config, real_config]:
             conditions = {condition.condition: condition for condition in config.conditions}
             self.assertEqual(set(conditions), expected_conditions)
-            self.assertEqual(config.task_list, "configs/task_splits/smoke_mock_1.json")
+            self.assertEqual(config.task_list, "configs/task_splits/smoke_local_1.json")
             self.assertEqual(
                 conditions["clean_skill_clean_verifier"].target_level,
                 "none",
@@ -1272,14 +1272,14 @@ class OpenCodeAdapterTest(unittest.TestCase):
                 self.assertIn("VERIFIER_STATUS: BUDGET_CLOSED", conditions["no_budget_control"].agent_prompt_hint)
                 self.assertIn("VERIFIER_STATUS: CLOSED", conditions["no_budget_control"].agent_prompt_hint)
             else:
-                self.assertEqual(config.output_dir, "runs/opencode_mechanism_ablation_stub")
+                self.assertEqual(config.output_dir, "runs/opencode_mechanism_ablation_local")
                 self.assertIn("PB-CHECK-004", conditions["no_budget_control"].agent_prompt_hint)
             self.assertEqual(conditions["clean_skill_clean_verifier"].cost_proxy, {})
             self.assertEqual(conditions["clean_skill_clean_verifier"].agent_prompt_hint, "")
 
     def test_opencode_online_defense_configs_declare_enforced_defense(self):
-        stub_config = load_experiment_config(
-            "configs/experiments/opencode_online_defense_stub.json"
+        local_config = load_experiment_config(
+            "configs/experiments/opencode_online_defense_local.json"
         )
         real_config = load_experiment_config(
             "configs/experiments/opencode_real_online_defense_pilot.json"
@@ -1289,10 +1289,10 @@ class OpenCodeAdapterTest(unittest.TestCase):
             "adaptive_full_medium",
             "adaptive_full_medium_online_defended",
         }
-        for config in [stub_config, real_config]:
+        for config in [local_config, real_config]:
             conditions = {condition.condition: condition for condition in config.conditions}
             self.assertEqual(set(conditions), expected_conditions)
-            self.assertEqual(config.task_list, "configs/task_splits/smoke_mock_1.json")
+            self.assertEqual(config.task_list, "configs/task_splits/smoke_local_1.json")
             defended = conditions["adaptive_full_medium_online_defended"]
             self.assertEqual(defended.target_level, "medium")
             self.assertEqual(defended.verifier_exposure_condition, "opencode_skill")

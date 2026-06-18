@@ -59,7 +59,7 @@ class LocalCommandAdapterTest(unittest.TestCase):
             )
             self.assertIsNone(result.failure_label)
             score = json.loads((Path(run_dir) / "programbench_score.json").read_text())
-            self.assertEqual(score["score_status"], "stub")
+            self.assertEqual(score["score_status"], "local_reference")
             events = (Path(run_dir) / "events.jsonl").read_text()
             self.assertIn("verifier_call", events)
 

@@ -1,17 +1,17 @@
 {
   "experiment": {
-    "name": "reviewer_quick_mock",
+    "name": "reviewer_quick_local",
     "seed": 20260618,
-    "output_dir": "runs/reviewer_quick_mock"
+    "output_dir": "runs/reviewer_quick_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/reviewer_mock_20.json",
+    "task_list": "configs/task_splits/reviewer_local_20.json",
     "no_internet": true
   },
   "agent": {
-    "runtime": "mock",
+    "runtime": "deterministic_local",
     "version": "reviewer-quick",
-    "model": "mock-model",
+    "model": "deterministic-local-model",
     "model_version": "reviewer-quick",
     "max_steps": 12,
     "timeout_seconds": 60

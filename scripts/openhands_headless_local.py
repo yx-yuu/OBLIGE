@@ -19,10 +19,10 @@ def main() -> None:
     task_file = Path(args.file).resolve()
     workspace = task_file.parent
     write_candidate(workspace)
-    print(json.dumps({"type": "message", "content": "OpenHands stub read task file"}))
+    print(json.dumps({"type": "message", "content": "OpenHands local reference read task file"}))
     print(json.dumps({"type": "action", "command": "write candidate and compile script"}))
     run_compile(workspace)
-    if os.environ.get("OPENHANDS_STUB_SKIP_VERIFIER") != "1":
+    if os.environ.get("OPENHANDS_REFERENCE_SKIP_VERIFIER") != "1":
         output = run_behavior_check(workspace)
         print(json.dumps({"type": "observation", "content": output[-2000:]}))
     print(json.dumps({"type": "message", "content": "final submit"}))
@@ -30,7 +30,7 @@ def main() -> None:
 
 def write_candidate(workspace: Path) -> None:
     (workspace / "candidate.py").write_text(
-        "# mock OpenHands candidate\nprint('ok')\n",
+        "# local reference OpenHands candidate\nprint('ok')\n",
         encoding="utf-8",
     )
     compile_script = workspace / "compile.sh"

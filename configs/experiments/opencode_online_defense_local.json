@@ -1,29 +1,29 @@
 {
   "experiment": {
-    "name": "opencode_online_defense_stub",
+    "name": "opencode_online_defense_local",
     "seed": 20260606,
-    "output_dir": "runs/opencode_online_defense_stub"
+    "output_dir": "runs/opencode_online_defense_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock_1.json",
+    "task_list": "configs/task_splits/smoke_local_1.json",
     "no_internet": true,
     "workspace_root": "workspaces",
     "scoring_command": [
       "python",
-      "{repo_root}/scripts/scorer_stub.py",
+      "{repo_root}/scripts/reference_scorer.py",
       "{workspace}"
     ]
   },
   "agent": {
     "runtime": "opencode",
-    "version": "stub",
-    "model": "opencode-online-defense-stub",
-    "model_version": "stub",
+    "version": "local-reference",
+    "model": "opencode-online-defense-local-reference",
+    "model_version": "local-reference",
     "max_steps": 9,
     "timeout_seconds": 30,
     "command": [
       "python",
-      "{repo_root}/scripts/opencode_agent_stub.py"
+      "{repo_root}/scripts/opencode_agent_reference.py"
     ]
   },
   "condition_defaults": {

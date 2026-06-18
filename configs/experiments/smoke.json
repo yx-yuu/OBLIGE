@@ -5,13 +5,13 @@
     "output_dir": "runs/smoke_mvp"
   },
   "programbench": {
-    "task_list": "configs/task_splits/smoke_mock.json",
+    "task_list": "configs/task_splits/smoke_local.json",
     "no_internet": true
   },
   "agent": {
-    "runtime": "mock",
+    "runtime": "deterministic_local",
     "version": "mvp",
-    "model": "mock-model",
+    "model": "deterministic-local-model",
     "model_version": "mvp",
     "max_steps": 12,
     "timeout_seconds": 60

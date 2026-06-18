@@ -171,7 +171,7 @@ def main() -> None:
         action="store_true",
         help=(
             "Overwrite runs without eval JSON as missing_programbench_eval so later "
-            "aggregation cannot mistake mock/stub scores for official scores."
+            "aggregation cannot mistake local reference scores for official scores."
         ),
     )
     parser.add_argument(

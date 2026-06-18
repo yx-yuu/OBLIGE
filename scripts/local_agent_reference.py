@@ -10,7 +10,7 @@ def main() -> None:
     condition = os.environ["EDOS_CONDITION"]
     candidate = workspace / "candidate.py"
     candidate.write_text(
-        "# mock local-command candidate\nprint('ok')\n",
+        "# local reference local-command candidate\nprint('ok')\n",
         encoding="utf-8",
     )
     compile_script = workspace / "compile.sh"

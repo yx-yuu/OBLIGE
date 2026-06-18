@@ -19,7 +19,7 @@ from edos.controller.policy import BudgetConfig, BudgetController
 from edos.instrumentation.failure_labels import infer_failure_label
 from edos.instrumentation.logger import RunLogger, utc_now
 from edos.instrumentation.usage import estimate_tokens
-from edos.programbench.scoring import mock_score
+from edos.programbench.scoring import reference_score
 from edos.types import (
     ConditionSpec,
     ContextState,
@@ -37,11 +37,11 @@ from edos.verifier.online_defense import OnlineDefenseConfig, apply_online_defen
 from edos.verifier.state import VerifierState
 
 
-class MockAgentAdapter(AgentAdapter):
-    """Deterministic adapter for schema and smoke testing.
+class DeterministicLocalAdapter(AgentAdapter):
+    """Deterministic local adapter for reviewer and reproducibility runs.
 
-    It simulates a coding agent that writes a candidate, optionally calls the
-    verifier, builds, probes, and submits for deterministic quick checks.
+    It executes the same run-record, verifier, scoring, and aggregation path as
+    the agent adapters while keeping the task trajectory deterministic.
     """
 
     def run_task(
@@ -67,7 +67,7 @@ class MockAgentAdapter(AgentAdapter):
             skill_name="behavior_reconstruction"
             if condition.verifier_exposure_condition == "skill_guided"
             else "",
-            skill_config_hash="mock-skill-config"
+            skill_config_hash="deterministic-skill-config"
             if condition.verifier_exposure_condition == "skill_guided"
             else "",
         )
@@ -207,7 +207,7 @@ class MockAgentAdapter(AgentAdapter):
             condition=condition.condition,
             max_steps_reached=max_steps_reached,
         )
-        score = mock_score(progress, failure_label)
+        score = reference_score(progress, failure_label)
         ended_at = utc_now()
         metadata["ended_at"] = ended_at
         logger.write_json("metadata.json", metadata)
@@ -290,7 +290,7 @@ class MockAgentAdapter(AgentAdapter):
             "skill_name": "behavior_reconstruction"
             if condition.verifier_exposure_condition == "skill_guided"
             else "",
-            "skill_config_hash": "mock-skill-config"
+            "skill_config_hash": "deterministic-skill-config"
             if condition.verifier_exposure_condition == "skill_guided"
             else "",
             "seed": experiment.seed,
@@ -300,10 +300,10 @@ class MockAgentAdapter(AgentAdapter):
             "started_at": utc_now(),
             "ended_at": None,
             "no_internet": experiment.no_internet,
-            "adapter_name": "mock",
+            "adapter_name": "deterministic_local",
             "verifier_entrypoint": "behavior_check",
-            "config_hash": "mock-config",
-            "result_scope": "mock_schema_smoke_only",
+            "config_hash": "deterministic-local-config",
+            "result_scope": "local_reference_result",
             "online_defense": condition.online_defense,
         }
 
@@ -431,8 +431,8 @@ class MockAgentAdapter(AgentAdapter):
             behavior_surface=behavior_surface,
             agent_summary={
                 "recent_action": recent_text,
-                "recent_gold_probe": "mock_gold_probe",
-                "recent_candidate_run": "mock_candidate_run"
+                "recent_gold_probe": "reference_gold_probe",
+                "recent_candidate_run": "reference_candidate_run"
                 if progress.last_candidate_run_seen
                 else "",
                 "candidate_build_status": "success"

@@ -52,15 +52,15 @@ class OpenAICompatibleProfileTest(unittest.TestCase):
             base_url="https://proxy.example/v1",
             api_key_env="EDOS_TEST_API_KEY",
             target_api_key_env="OPENAI_API_KEY",
-            model_kwargs={"api_key": "dummy-value"},
-            extra_body={"nested": {"access_token": "dummy-value"}},
+            model_kwargs={"api_key": "redacted-test-value"},
+            extra_body={"nested": {"access_token": "redacted-test-value"}},
         )
 
-        env = profile.env_for_subprocess({"EDOS_TEST_API_KEY": "dummy-value"})
+        env = profile.env_for_subprocess({"EDOS_TEST_API_KEY": "redacted-test-value"})
         snapshot = profile.redacted_snapshot()
 
-        self.assertEqual(env["OPENAI_API_KEY"], "dummy-value")
-        self.assertNotIn("dummy-value", json.dumps(snapshot))
+        self.assertEqual(env["OPENAI_API_KEY"], "redacted-test-value")
+        self.assertNotIn("redacted-test-value", json.dumps(snapshot))
         self.assertEqual(snapshot["api_key_env"], "EDOS_TEST_API_KEY")
         self.assertEqual(snapshot["model_kwargs"]["api_key"], "<redacted>")
         self.assertEqual(snapshot["extra_body"]["nested"]["access_token"], "<redacted>")
