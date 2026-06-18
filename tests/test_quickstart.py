@@ -12,27 +12,27 @@ from edos.config import load_experiment_config
 from edos.programbench.tasks import load_task_list
 
 
-class ReviewerQuickstartTest(unittest.TestCase):
-    def test_reviewer_config_covers_twenty_tasks_and_full_condition_matrix(self):
-        config = load_experiment_config("configs/experiments/reviewer_quick_local.json")
+class QuickstartTest(unittest.TestCase):
+    def test_quick_config_covers_twenty_tasks_and_full_condition_matrix(self):
+        config = load_experiment_config("configs/experiments/quick_local.json")
         smoke = load_experiment_config("configs/experiments/smoke.json")
-        tasks = load_task_list("configs/task_splits/reviewer_local_20.json")
+        tasks = load_task_list("configs/task_splits/local_tasks_20.json")
         conditions = [item.condition for item in config.conditions]
 
-        self.assertEqual(config.name, "reviewer_quick_local")
+        self.assertEqual(config.name, "quick_local")
         self.assertEqual(config.agent_runtime, "deterministic_local")
-        self.assertEqual(config.task_list, "configs/task_splits/reviewer_local_20.json")
+        self.assertEqual(config.task_list, "configs/task_splits/local_tasks_20.json")
         self.assertEqual(len(tasks), 20)
         self.assertEqual(len(config.conditions), len(smoke.conditions) + 1)
         for condition in [item.condition for item in smoke.conditions]:
             self.assertIn(condition, conditions)
         self.assertIn("adaptive_full_medium_online_defended", conditions)
 
-    def test_reviewer_quickstart_script_generates_complete_evaluation_artifacts(self):
+    def test_quickstart_script_generates_complete_evaluation_artifacts(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            run_dir = root / "reviewer_single"
-            eval_dir = root / "reviewer_single_eval"
+            run_dir = root / "quick_single"
+            eval_dir = root / "quick_single_eval"
             env = {
                 **os.environ,
                 "PYTHONPATH": "src",
@@ -42,7 +42,7 @@ class ReviewerQuickstartTest(unittest.TestCase):
             completed = subprocess.run(
                 [
                     "bash",
-                    "scripts/reviewer_quickstart.sh",
+                    "scripts/quickstart.sh",
                     "1",
                     str(run_dir),
                     str(eval_dir),
@@ -71,7 +71,7 @@ class ReviewerQuickstartTest(unittest.TestCase):
                 self.assertTrue(Path(figure["path"]).exists(), label)
 
             run_index = json.loads((run_dir / "run_index.json").read_text(encoding="utf-8"))
-            config = load_experiment_config("configs/experiments/reviewer_quick_local.json")
+            config = load_experiment_config("configs/experiments/quick_local.json")
             self.assertEqual(len(run_index), len(config.conditions))
             defense_rows = self._read_csv(eval_dir / "tables" / "table_defense.csv")
             self.assertGreater(len(defense_rows), 0)

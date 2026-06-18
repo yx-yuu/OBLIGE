@@ -331,7 +331,7 @@ def main() -> None:
     parser.add_argument(
         "--allow-raw-scoring",
         action="store_true",
-        help="Debug only. Do not use raw eval-json scoring for paper tables.",
+        help="Use raw eval-json scoring without tests.json filtering.",
     )
     parser.add_argument(
         "--keep-existing-scores-for-missing-eval",

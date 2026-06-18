@@ -32,11 +32,11 @@ from edos.types import (
 
 
 class LocalCommandAdapter(AgentAdapter):
-    """Runs a configured local command as a stand-in for a real agent runtime.
+    """Runs a configured local command as an agent runtime.
 
-    The adapter only prepares workspace, exposes environment variables, runs the
-    command, and records artifacts. It does not generate verifier payloads or
-    decide attack policy.
+    The adapter prepares the workspace, exposes environment variables, runs the
+    command, and records run artifacts. Verifier behavior is controlled by the
+    configured experiment condition.
     """
 
     def run_task(

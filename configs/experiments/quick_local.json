@@ -1,18 +1,18 @@
 {
   "experiment": {
-    "name": "reviewer_quick_local",
+    "name": "quick_local",
     "seed": 20260618,
-    "output_dir": "runs/reviewer_quick_local"
+    "output_dir": "runs/quick_local"
   },
   "programbench": {
-    "task_list": "configs/task_splits/reviewer_local_20.json",
+    "task_list": "configs/task_splits/local_tasks_20.json",
     "no_internet": true
   },
   "agent": {
     "runtime": "deterministic_local",
-    "version": "reviewer-quick",
+    "version": "quick-local",
     "model": "deterministic-local-model",
-    "model_version": "reviewer-quick",
+    "model_version": "quick-local",
     "max_steps": 12,
     "timeout_seconds": 60
   },

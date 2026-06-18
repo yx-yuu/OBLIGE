@@ -11,7 +11,7 @@ def main() -> None:
         "--mode",
         choices=["smoke", "aggregate"],
         default="smoke",
-        help="smoke builds a deterministic reviewer fixture; aggregate reads observed run artifacts.",
+        help="smoke builds a deterministic local fixture; aggregate reads observed run artifacts.",
     )
     parser.add_argument(
         "--run-dir",
@@ -21,7 +21,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         default="artifacts/evaluation_smoke",
-        help="Directory for generated tables, figures, and manifest.",
+        help="Directory for generated analysis artifacts and manifest.",
     )
     parser.add_argument(
         "--refresh-aggregate",

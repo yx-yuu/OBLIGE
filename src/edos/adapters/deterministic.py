@@ -38,7 +38,7 @@ from edos.verifier.state import VerifierState
 
 
 class DeterministicLocalAdapter(AgentAdapter):
-    """Deterministic local adapter for reviewer and reproducibility runs.
+    """Deterministic local adapter for reproducibility runs.
 
     It executes the same run-record, verifier, scoring, and aggregation path as
     the agent adapters while keeping the task trajectory deterministic.

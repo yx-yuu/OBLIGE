@@ -200,7 +200,7 @@ def build_evaluation_artifacts(
     run_dir: str | Path | None = None,
     refresh_aggregate: bool = False,
 ) -> dict[str, Path]:
-    """Build reviewer-facing Evaluation tables and figures.
+    """Build Evaluation analysis artifacts.
 
     `smoke` mode is a complete, deterministic single-example fixture. It is
     meant to prove that the artifact code path is runnable without expensive
@@ -217,8 +217,8 @@ def build_evaluation_artifacts(
     if mode == "smoke":
         bundle = smoke_tables()
         source_summary = {
-            "artifact_mode": "reviewer_smoke_fixture",
-            "artifact_scope": "Quick-scale fixture covering the full Evaluation artifact schema and reviewer execution path.",
+            "artifact_mode": "local_smoke_fixture",
+            "artifact_scope": "Quick-scale fixture covering the full Evaluation artifact schema and local execution path.",
         }
     elif mode == "aggregate":
         if run_dir is None:
@@ -227,7 +227,7 @@ def build_evaluation_artifacts(
         source_summary = {
             "artifact_mode": "aggregate_observed",
             "run_dir": str(run_dir),
-            "artifact_scope": "Aggregate artifact generated from observed run records using the Evaluation table and figure schema.",
+            "artifact_scope": "Aggregate artifact generated from observed run records using the analysis schema.",
         }
     else:
         raise ValueError(f"unsupported mode: {mode}")
@@ -727,7 +727,7 @@ def render_latex_table(label: str, caption: str, rows: list[dict[str, object]]) 
         return f"% {label}: no rows available for this artifact run.\n"
     fields = list(rows[0].keys())
     lines = [
-        f"% Auto-generated reviewer artifact for {label}.",
+        f"% Auto-generated analysis artifact for {label}.",
         "% Auto-generated from the OBLIGE Evaluation artifact schema.",
         "\\begin{tabular}{" + "l" * len(fields) + "}",
         "\\toprule",

@@ -20,7 +20,7 @@ class EvaluationArtifactsTest(unittest.TestCase):
             paths = build_evaluation_artifacts(output_dir=out, mode="smoke")
             manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
 
-            self.assertEqual(manifest["artifact_mode"], "reviewer_smoke_fixture")
+            self.assertEqual(manifest["artifact_mode"], "local_smoke_fixture")
             self.assertEqual(set(manifest["tables"]), {label for label, _, _ in TABLE_SPECS})
             for _label, stem, _caption in TABLE_SPECS:
                 csv_path = out / "tables" / f"{stem}.csv"
