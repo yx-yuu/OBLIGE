@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    {
+      "task_id": "local_text_cli_easy",
+      "difficulty": "easy",
+      "category": "text_cli",
+      "docs": "Local task: implement a CLI that transforms text from stdin.",
+      "gold_command": null
+    }
+  ]
+}

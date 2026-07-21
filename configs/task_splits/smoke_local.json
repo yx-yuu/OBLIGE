@@ -1,0 +1,19 @@
+{
+  "tasks": [
+    {
+      "task_id": "local_text_cli_easy",
+      "difficulty": "easy",
+      "category": "text_cli",
+      "docs": "Local task: implement a CLI that transforms text from stdin.",
+      "gold_command": null
+    },
+    {
+      "task_id": "local_config_tool_medium",
+      "difficulty": "medium",
+      "category": "developer_tool",
+      "docs": "Local task: implement a small config inspection tool.",
+      "gold_command": null
+    }
+  ]
+}
+

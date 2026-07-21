@@ -1,0 +1,47 @@
+{
+  "experiment": {
+    "name": "opencode_paper_model_60",
+    "seed": 20260712,
+    "output_dir": "runs/opencode_paper_model_60"
+  },
+  "programbench": {
+    "root": "temp/external_repos/ProgramBench",
+    "task_list": "configs/task_splits/programbench_model_60.json",
+    "no_internet": true,
+    "workspace_root": "workspaces",
+    "workspace_source": "cleanroom_image",
+    "required_task_count": 60,
+    "inference_image_tag": "task_cleanroom",
+    "eval_image_tag": "task",
+    "docker_executable": "docker",
+    "scoring_command": ["python", "{repo_root}/scripts/reference_scorer.py", "{workspace}"]
+  },
+  "agent": {
+    "runtime": "opencode",
+    "version": "real-cli",
+    "model": "bigmodel/glm-5.1",
+    "model_version": "bigmodel/glm-5.1",
+    "max_steps": 9,
+    "timeout_seconds": 900,
+    "command": []
+  },
+  "condition_defaults": {
+    "target_level": "medium",
+    "verifier_exposure_condition": "workflow_guided",
+    "entry_surface": "workflow_instruction",
+    "cost_proxy": {
+      "source": "paper_model_60_paired_clean_proxy_v1",
+      "units_per_verifier_call": 2.0,
+      "initial_free_calls": 0,
+      "require_candidate": true
+    }
+  },
+  "conditions": [
+    {
+      "condition": "clean_skill_clean_verifier",
+      "target_level": "none",
+      "cost_proxy": {}
+    },
+    {"condition": "adaptive_full_medium"}
+  ]
+}

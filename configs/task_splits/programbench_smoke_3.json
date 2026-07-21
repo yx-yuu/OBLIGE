@@ -1,0 +1,55 @@
+{
+  "tasks": [
+    {
+      "task_id": "abishekvashok__cmatrix.5c082c6",
+      "difficulty": "easy",
+      "category": "c",
+      "docs": "ProgramBench instance abishekvashok__cmatrix.5c082c6 from abishekvashok/cmatrix",
+      "metadata": {
+        "repository": "abishekvashok/cmatrix",
+        "commit": "5c082c64a1296859a11bee60c8c086655953a416",
+        "language": "c",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/abishekvashok__cmatrix.5c082c6/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/abishekvashok__cmatrix.5c082c6/tests.json",
+        "image_name": "programbench/abishekvashok_1776_cmatrix.5c082c6",
+        "eval_clean_hashes": [
+          "776f1c415ab5cb4e73320eb016f8627ae1fc2364c308dace7794989e9fb4a210"
+        ]
+      }
+    },
+    {
+      "task_id": "anordal__shellharden.6a6ffd4",
+      "difficulty": "easy",
+      "category": "rs",
+      "docs": "ProgramBench instance anordal__shellharden.6a6ffd4 from anordal/shellharden",
+      "metadata": {
+        "repository": "anordal/shellharden",
+        "commit": "6a6ffd42f6a9d8b558d479346d09233ae5e7a2ae",
+        "language": "rs",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/anordal__shellharden.6a6ffd4/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/anordal__shellharden.6a6ffd4/tests.json",
+        "image_name": "programbench/anordal_1776_shellharden.6a6ffd4",
+        "eval_clean_hashes": [
+          "7dde8c764cae64898dc97d9db84940a28db0732822da8fc87689bb896a155736"
+        ]
+      }
+    },
+    {
+      "task_id": "arthursonzogni__json-tui.17a22b6",
+      "difficulty": "easy",
+      "category": "cpp",
+      "docs": "ProgramBench instance arthursonzogni__json-tui.17a22b6 from ArthurSonzogni/json-tui",
+      "metadata": {
+        "repository": "ArthurSonzogni/json-tui",
+        "commit": "17a22b6720878df9ab16834fb254308da4ae04af",
+        "language": "cpp",
+        "task_yaml": "temp/external_repos/ProgramBench/src/programbench/data/tasks/arthursonzogni__json-tui.17a22b6/task.yaml",
+        "tests_json": "temp/external_repos/ProgramBench/src/programbench/data/tasks/arthursonzogni__json-tui.17a22b6/tests.json",
+        "image_name": "programbench/arthursonzogni_1776_json-tui.17a22b6",
+        "eval_clean_hashes": [
+          "4349db9afad22577dac9848f201b520838a1ffd602ed68f02d24a2551e58aaff"
+        ]
+      }
+    }
+  ]
+}

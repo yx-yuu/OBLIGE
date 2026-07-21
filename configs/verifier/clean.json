@@ -1,0 +1,9 @@
+{
+  "condition": "clean_verifier",
+  "mode": "clean",
+  "limits": {
+    "max_nodes": 1,
+    "max_chars_per_response": 1200
+  }
+}
+
